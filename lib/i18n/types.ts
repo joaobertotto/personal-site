@@ -3,6 +3,7 @@ export type Intro = {
   role: string
   bio: string
   location: string
+  avatarAlt: string
 }
 
 export type About = {

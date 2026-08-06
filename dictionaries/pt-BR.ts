@@ -20,6 +20,7 @@ const ptBR: Dictionary = {
     role: "Engenheiro de Software",
     bio: "Engenheiro de software com 5 anos construindo aplicações web em produção com React, TypeScript e Next.js. Atualmente sou o único desenvolvedor de um produto de e-commerce nos EUA, responsável pelo storefront de ponta a ponta — da interface para o cliente até os sistemas que levam os pedidos à logística. Quatro anos de trabalho remoto e assíncrono com times baseados nos EUA.",
     location: "Porto Alegre, Brasil (UTC−3) · Remoto",
+    avatarAlt: "Retrato de João Bertotto",
   },
   about: {
     heading: "Entre produto e sistemas",
