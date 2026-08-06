@@ -23,3 +23,22 @@ export type Contact = {
   website: string
   github: string
 }
+
+export type Dictionary = {
+  meta: {
+    title: string
+    description: string
+  }
+  ui: {
+    experience: string
+    contact: string
+    work: string
+    siteInfo: string
+    projectGallery: string
+    language: string
+    project: string
+  }
+  intro: Intro
+  about: About
+  experience: Experience[]
+}

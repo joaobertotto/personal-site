@@ -1,13 +1,20 @@
 import { ScrollColumn } from "@/components/layout/scroll-column"
+import type { Dictionary } from "@/lib/i18n/types"
 
-export function WorkColumn() {
+type WorkColumnProps = {
+  dictionary: Dictionary
+}
+
+export function WorkColumn({ dictionary }: WorkColumnProps) {
+  const { ui } = dictionary
+
   return (
     <ScrollColumn
-      ariaLabel="Project gallery"
+      ariaLabel={ui.projectGallery}
       className="size-full md:h-dvh"
       contentClassName="flex w-full flex-col gap-6 px-6 py-10 md:pr-8 md:pl-0"
     >
-      <p className="text-sm text-muted-foreground md:sr-only">Work</p>
+      <p className="text-sm text-muted-foreground md:sr-only">{ui.work}</p>
 
       {Array.from({ length: 4 }, (_, index) => (
         <div
@@ -15,7 +22,7 @@ export function WorkColumn() {
           className="flex aspect-[4/3] w-full items-end rounded-xl bg-muted p-4"
         >
           <span className="text-sm text-muted-foreground">
-            Project {index + 1}
+            {ui.project} {index + 1}
           </span>
         </div>
       ))}

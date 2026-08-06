@@ -1,4 +1,4 @@
-import type { Contact } from "@/constants/types"
+import type { Contact } from "@/lib/i18n/types"
 
 export const contact: Contact = {
   email: "joaobertottoneto@gmail.com",
