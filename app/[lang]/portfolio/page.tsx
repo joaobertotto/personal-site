@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { HomeLayout } from "@/components/home/layout"
+import { PortfolioLayout } from "@/components/portfolio/layout"
 import { isLocale } from "@/lib/i18n/config"
 import { getDictionary } from "@/lib/i18n/dictionaries"
 
 export async function generateMetadata({
   params,
-}: PageProps<"/[lang]">): Promise<Metadata> {
+}: PageProps<"/[lang]/portfolio">): Promise<Metadata> {
   const { lang } = await params
 
   if (!isLocale(lang)) {
@@ -17,12 +17,14 @@ export async function generateMetadata({
   const dictionary = await getDictionary(lang)
 
   return {
-    title: dictionary.meta.home.title,
-    description: dictionary.meta.home.description,
+    title: dictionary.meta.portfolio.title,
+    description: dictionary.meta.portfolio.description,
   }
 }
 
-export default async function Page({ params }: PageProps<"/[lang]">) {
+export default async function PortfolioPage({
+  params,
+}: PageProps<"/[lang]/portfolio">) {
   const { lang } = await params
 
   if (!isLocale(lang)) {
@@ -31,5 +33,5 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
 
   const dictionary = await getDictionary(lang)
 
-  return <HomeLayout locale={lang} dictionary={dictionary} />
+  return <PortfolioLayout locale={lang} dictionary={dictionary} />
 }

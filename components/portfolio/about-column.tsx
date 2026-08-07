@@ -1,5 +1,6 @@
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
 import { ScrollColumn } from "@/components/layout/scroll-column"
+import { SiteNav } from "@/components/layout/site-nav"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { contact } from "@/constants/contact"
 import type { Locale } from "@/lib/i18n/config"
@@ -20,28 +21,28 @@ export function AboutColumn({ locale, dictionary }: AboutColumnProps) {
       contentClassName="flex w-full flex-col gap-10 px-6 py-10 md:pr-10 md:pl-8"
     >
       <div className="flex items-start justify-between gap-4">
-        <section id="intro" className="flex min-w-0 flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <Avatar className="size-14 rounded-lg" size="lg">
-              <AvatarImage
-                src="/avatar.png"
-                alt={intro.avatarAlt}
-                className="rounded-lg"
-              />
-              <AvatarFallback className="rounded-lg">JB</AvatarFallback>
-            </Avatar>
-            <div className="flex min-w-0 flex-col">
-              <h1 className="text-2xl font-medium tracking-tight">
-                {intro.name}
-              </h1>
-              <p className="text-sm text-muted-foreground">{intro.role}</p>
-            </div>
-          </div>
-          <p className="text-sm text-muted-foreground">{intro.location}</p>
-          <p className="max-w-md text-muted-foreground">{intro.bio}</p>
-        </section>
+        <SiteNav locale={locale} labels={ui.nav} />
         <LanguageSwitcher locale={locale} label={ui.language} />
       </div>
+
+      <section id="intro" className="flex min-w-0 flex-col gap-4">
+        <div className="flex items-center gap-3">
+          <Avatar className="size-14 rounded-lg" size="lg">
+            <AvatarImage
+              src="/avatar.png"
+              alt={intro.avatarAlt}
+              className="rounded-lg"
+            />
+            <AvatarFallback className="rounded-lg">JB</AvatarFallback>
+          </Avatar>
+          <div className="flex min-w-0 flex-col">
+            <h1 className="text-2xl font-medium tracking-tight">{intro.name}</h1>
+            <p className="text-sm text-muted-foreground">{intro.role}</p>
+          </div>
+        </div>
+        <p className="text-sm text-muted-foreground">{intro.location}</p>
+        <p className="max-w-md text-muted-foreground">{intro.bio}</p>
+      </section>
 
       <section id="about" className="flex flex-col gap-3">
         <p className="text-sm text-muted-foreground">{about.heading}</p>
