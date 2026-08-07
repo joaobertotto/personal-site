@@ -12,7 +12,7 @@ const LON = -51.2177
 
 type WeatherLabels = Dictionary["ui"]["weather"]
 
-type WeatherCardProps = {
+type WeatherTileProps = {
   labels: WeatherLabels
   span: string
   className?: string
@@ -39,7 +39,7 @@ function conditionFromCode(
   return conditions.mixed
 }
 
-export function WeatherCard({ labels, span, className }: WeatherCardProps) {
+export function WeatherTile({ labels, span, className }: WeatherTileProps) {
   const [weather, setWeather] = useState<WeatherState>({ status: "loading" })
 
   useEffect(() => {

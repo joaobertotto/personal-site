@@ -11,7 +11,7 @@ const TIME_ZONE = "America/Sao_Paulo"
 
 type StatusLabels = Dictionary["ui"]["status"]
 
-type StatusCardProps = {
+type StatusTileProps = {
   labels: StatusLabels
   span: string
 }
@@ -45,7 +45,7 @@ function statusFromLocalTime(date: Date): StatusKey {
   return "offline"
 }
 
-export function StatusCard({ labels, span }: StatusCardProps) {
+export function StatusTile({ labels, span }: StatusTileProps) {
   const [status, setStatus] = useState<StatusKey>("offline")
 
   useEffect(() => {

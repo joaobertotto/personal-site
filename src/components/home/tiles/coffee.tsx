@@ -11,7 +11,7 @@ const CHANGE_EVENT = "personal-site:coffee-count"
 
 type CoffeeLabels = Dictionary["ui"]["coffee"]
 
-type CoffeeCardProps = {
+type CoffeeTileProps = {
   labels: CoffeeLabels
   span: string
 }
@@ -63,7 +63,7 @@ function subscribe(onStoreChange: () => void) {
   }
 }
 
-export function CoffeeCard({ labels, span }: CoffeeCardProps) {
+export function CoffeeTile({ labels, span }: CoffeeTileProps) {
   const count = useSyncExternalStore(subscribe, readCount, () => 0)
 
   return (

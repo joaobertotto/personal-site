@@ -1,47 +1,15 @@
 "use client"
 
+import type { ReactNode } from "react"
+
+import { useDictionary } from "@/components/i18n/language-provider"
 import { LanguageSwitcher } from "@/components/i18n/language-switcher"
 import { LocaleText } from "@/components/i18n/locale-text"
-import { useDictionary } from "@/components/i18n/language-provider"
 import { SiteNav } from "@/components/layout/site-nav"
-import { ProjectSection } from "@/components/portfolio/project-section"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import type { Project } from "@/content/types"
 
-function ProjectGroup({
-  label,
-  projects,
-  visitLabel,
-}: {
-  label: string
-  projects: Project[]
-  visitLabel: string
-}) {
-  if (projects.length === 0) {
-    return null
-  }
-
-  return (
-    <div className="space-y-5">
-      <p className="mx-auto max-w-3xl px-4 text-sm font-medium tracking-wide text-muted-foreground uppercase sm:px-6">
-        <LocaleText>{label}</LocaleText>
-      </p>
-      <div className="space-y-16">
-        {projects.map((project) => (
-          <ProjectSection
-            key={project.id}
-            project={project}
-            visitLabel={visitLabel}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
-
-export function PortfolioLayout() {
-  const dictionary = useDictionary()
-  const { intro, ui, work, maker, fun } = dictionary
+export default function PortfolioLayout({ children }: { children: ReactNode }) {
+  const { intro, ui } = useDictionary()
 
   return (
     <main className="flex min-h-dvh flex-col bg-background text-foreground">
@@ -70,21 +38,7 @@ export function PortfolioLayout() {
             </p>
           </div>
 
-          <ProjectGroup
-            label={ui.work}
-            projects={work}
-            visitLabel={ui.visitProject}
-          />
-          <ProjectGroup
-            label={ui.maker}
-            projects={maker}
-            visitLabel={ui.visitProject}
-          />
-          <ProjectGroup
-            label={ui.fun}
-            projects={fun}
-            visitLabel={ui.visitProject}
-          />
+          {children}
         </div>
       </div>
     </main>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-import { PortfolioLayout } from "./layout"
+import { ProjectGroups } from "@/components/portfolio/project-groups"
 import { getDictionary } from "@/lib/i18n/get-dictionary"
 import { getRequestLocale } from "@/lib/i18n/get-locale"
 
@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function PortfolioPage() {
-  return <PortfolioLayout />
+  return <ProjectGroups />
 }

@@ -285,7 +285,15 @@ const ptBR: Dictionary = {
         span: "col-span-2",
       },
     ],
+    // Anchor + cluster: map is a 2x2 anchor, the four widgets form a 2x2
+    // cluster beside it, and the project closes the band full width.
+    // Fills a 4x3 grid exactly on md+, and a 2x5 grid exactly on mobile.
     fun: [
+      {
+        id: "tile-map",
+        kind: "map",
+        span: "col-span-2 row-span-2",
+      },
       {
         id: "tile-status",
         kind: "status",
@@ -306,17 +314,7 @@ const ptBR: Dictionary = {
         kind: "weather",
         span: "col-span-1",
       },
-      {
-        id: "tile-map",
-        kind: "map",
-        span: "col-span-2 row-span-2",
-      },
-      {
-        id: "tile-personal-site",
-        kind: "project",
-        projectId: "personal-site",
-        span: "col-span-2",
-      },
+
     ],
   },
 }

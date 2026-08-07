@@ -33,10 +33,13 @@ src/
   app/                    Next.js App Router — routes, metadata, global styles
     layout.tsx              root layout: fonts, theme + language providers
     page.tsx                home
-    portfolio/page.tsx      portfolio
+    portfolio/
+      layout.tsx            portfolio chrome: header, avatar, bio
+      page.tsx              portfolio project groups
   components/
-    home/                 home page: bento tiles, status/weather/map/coffee cards
-    portfolio/            portfolio page: about column, project sections
+    home/                 home page shell — home-layout, work-column, fun-bento
+      tiles/                bento tiles: weather, map, status, local-time, coffee
+    portfolio/            about column, project groups and sections
     layout/               shared chrome — site nav, scroll columns
     i18n/                 language provider, switcher, animated LocaleText
     providers/            theme provider

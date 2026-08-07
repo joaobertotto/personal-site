@@ -1,8 +1,8 @@
 "use client"
 
-import { AboutColumn } from "@/components/portfolio/about-column"
 import { WorkColumn } from "@/components/home/work-column"
 import { useDictionary } from "@/components/i18n/language-provider"
+import { AboutColumn } from "@/components/portfolio/about-column"
 
 export function HomeLayout() {
   const dictionary = useDictionary()

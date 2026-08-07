@@ -1,9 +1,9 @@
-import { CoffeeCard } from "@/components/home/coffee-card"
-import { LocalTimeCard } from "@/components/home/local-time-card"
-import { MapCard } from "@/components/home/map-card"
 import { MosaicTile } from "@/components/home/mosaic-tile"
-import { StatusCard } from "@/components/home/status-card"
-import { WeatherCard } from "@/components/home/weather-card"
+import { CoffeeTile } from "@/components/home/tiles/coffee"
+import { LocalTimeTile } from "@/components/home/tiles/local-time"
+import { MapTile } from "@/components/home/tiles/map"
+import { StatusTile } from "@/components/home/tiles/status"
+import { WeatherTile } from "@/components/home/tiles/weather"
 import { LocaleText } from "@/components/i18n/locale-text"
 import type { Dictionary, HomeTile, Project } from "@/content/types"
 
@@ -26,17 +26,17 @@ function renderFunTile({
 }) {
   switch (tile.kind) {
     case "weather":
-      return <WeatherCard key={tile.id} labels={ui.weather} span={tile.span} />
+      return <WeatherTile key={tile.id} labels={ui.weather} span={tile.span} />
     case "map":
-      return <MapCard key={tile.id} labels={ui.map} span={tile.span} />
+      return <MapTile key={tile.id} labels={ui.map} span={tile.span} />
     case "status":
-      return <StatusCard key={tile.id} labels={ui.status} span={tile.span} />
+      return <StatusTile key={tile.id} labels={ui.status} span={tile.span} />
     case "localTime":
       return (
-        <LocalTimeCard key={tile.id} labels={ui.localTime} span={tile.span} />
+        <LocalTimeTile key={tile.id} labels={ui.localTime} span={tile.span} />
       )
     case "coffee":
-      return <CoffeeCard key={tile.id} labels={ui.coffee} span={tile.span} />
+      return <CoffeeTile key={tile.id} labels={ui.coffee} span={tile.span} />
     case "project": {
       const project = projectById(projects, tile.projectId)
       if (!project) {

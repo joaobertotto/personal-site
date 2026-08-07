@@ -10,13 +10,13 @@ const APPLE_MAPS_URL =
 
 type MapLabels = Dictionary["ui"]["map"]
 
-type MapCardProps = {
+type MapTileProps = {
   labels: MapLabels
   span: string
   className?: string
 }
 
-export function MapCard({ labels, span, className }: MapCardProps) {
+export function MapTile({ labels, span, className }: MapTileProps) {
   return (
     <li className={cn("min-h-40 list-none p-0.5", span, className)}>
       <a

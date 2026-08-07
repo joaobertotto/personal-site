@@ -12,7 +12,7 @@ const TIME_ZONE = "America/Sao_Paulo"
 
 type LocalTimeLabels = Dictionary["ui"]["localTime"]
 
-type LocalTimeCardProps = {
+type LocalTimeTileProps = {
   labels: LocalTimeLabels
   span: string
 }
@@ -41,7 +41,7 @@ function formatParts(date: Date, locale: Locale): ClockParts {
   return { time, day }
 }
 
-export function LocalTimeCard({ labels, span }: LocalTimeCardProps) {
+export function LocalTimeTile({ labels, span }: LocalTimeTileProps) {
   const { locale } = useLocale()
   const [now, setNow] = useState<ClockParts | null>(null)
 
