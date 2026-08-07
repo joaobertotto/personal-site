@@ -10,6 +10,7 @@ const en: Dictionary = {
     experience: "Experience",
     contact: "Contact",
     work: "Work",
+    fun: "Fun",
     siteInfo: "Site information",
     projectGallery: "Project gallery",
     language: "Language",

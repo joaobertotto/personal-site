@@ -34,6 +34,7 @@ export type Dictionary = {
     experience: string
     contact: string
     work: string
+    fun: string
     siteInfo: string
     projectGallery: string
     language: string

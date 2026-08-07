@@ -10,6 +10,7 @@ const ptBR: Dictionary = {
     experience: "Experiência",
     contact: "Contato",
     work: "Trabalho",
+    fun: "Diversão",
     siteInfo: "Informações do site",
     projectGallery: "Galeria de projetos",
     language: "Idioma",
