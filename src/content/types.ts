@@ -25,6 +25,32 @@ export type Contact = {
   email: string
   website: string
   github: string
+  /** Handle only — the part after /in/ in your profile URL. Empty hides the link. */
+  linkedin: string
+}
+
+export type ContactPage = {
+  heading: string
+  body: string
+  availability: {
+    label: string
+    replyTime: string
+  }
+  links: {
+    label: string
+    email: string
+    github: string
+    linkedin: string
+  }
+  form: {
+    heading: string
+    subject: string
+    subjectPlaceholder: string
+    message: string
+    messagePlaceholder: string
+    send: string
+    hint: string
+  }
 }
 
 export type ProjectImage = {
@@ -68,6 +94,7 @@ export type Dictionary = {
   meta: {
     home: PageMeta
     portfolio: PageMeta
+    contact: PageMeta
   }
   ui: {
     experience: string
@@ -120,11 +147,13 @@ export type Dictionary = {
     nav: {
       home: string
       portfolio: string
+      contact: string
       label: string
     }
   }
   intro: Intro
   about: About
+  contactPage: ContactPage
   experience: Experience[]
   work: Project[]
   maker: Project[]

@@ -12,6 +12,11 @@ const en: Dictionary = {
       description:
         "Selected work — storefronts, product tools, and experiments built with React, TypeScript, and Next.js.",
     },
+    contact: {
+      title: "Contact · João Bertotto",
+      description:
+        "Get in touch about front-end roles, freelance work, or anything you saw on the site.",
+    },
   },
   ui: {
     experience: "Experience",
@@ -64,6 +69,7 @@ const en: Dictionary = {
     nav: {
       home: "Home",
       portfolio: "Portfolio",
+      contact: "Contact",
       label: "Primary",
     },
   },
@@ -79,6 +85,29 @@ const en: Dictionary = {
   about: {
     heading: "Between product and systems",
     body: "I build production storefronts and the systems around them — React, TypeScript, and Next.js on the frontend, with Shopify, Node services, and Three.js when the product needs more than a page.",
+  },
+  contactPage: {
+    heading: "Let's talk",
+    body: "I'm open to front-end and full-stack roles, and to freelance work on storefronts, product tools, and 3D configurators. Anything you saw on this site is fair game too.",
+    availability: {
+      label: "Right now",
+      replyTime: "I usually reply within a day.",
+    },
+    links: {
+      label: "Elsewhere",
+      email: "Email",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+    },
+    form: {
+      heading: "Send a message",
+      subject: "Subject",
+      subjectPlaceholder: "Front-end role at …",
+      message: "Message",
+      messagePlaceholder: "A little about the role, the project, or the idea.",
+      send: "Open in email app",
+      hint: "This opens your email app with the message ready to send — nothing is submitted to this site.",
+    },
   },
   experience: [
     {
@@ -314,7 +343,6 @@ const en: Dictionary = {
         kind: "weather",
         span: "col-span-1",
       },
-
     ],
   },
 }

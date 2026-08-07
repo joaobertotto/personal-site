@@ -12,6 +12,11 @@ const ptBR: Dictionary = {
       description:
         "Trabalhos selecionados — storefronts, ferramentas de produto e experimentos com React, TypeScript e Next.js.",
     },
+    contact: {
+      title: "Contato · João Bertotto",
+      description:
+        "Fale comigo sobre vagas de front-end, trabalhos freelance ou qualquer coisa que você viu no site.",
+    },
   },
   ui: {
     experience: "Experiência",
@@ -64,6 +69,7 @@ const ptBR: Dictionary = {
     nav: {
       home: "Início",
       portfolio: "Portfólio",
+      contact: "Contato",
       label: "Principal",
     },
   },
@@ -79,6 +85,29 @@ const ptBR: Dictionary = {
   about: {
     heading: "Entre produto e sistemas",
     body: "Eu construo storefronts em produção e os sistemas ao redor deles — React, TypeScript e Next.js no frontend, com Shopify, serviços Node e Three.js quando o produto precisa de mais do que uma página.",
+  },
+  contactPage: {
+    heading: "Vamos conversar",
+    body: "Estou aberto a vagas de front-end e full-stack, e a trabalhos freelance em storefronts, ferramentas de produto e configuradores 3D. Qualquer coisa que você viu neste site também vale.",
+    availability: {
+      label: "Agora",
+      replyTime: "Costumo responder em até um dia.",
+    },
+    links: {
+      label: "Em outros lugares",
+      email: "E-mail",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+    },
+    form: {
+      heading: "Enviar uma mensagem",
+      subject: "Assunto",
+      subjectPlaceholder: "Vaga de front-end na …",
+      message: "Mensagem",
+      messagePlaceholder: "Um pouco sobre a vaga, o projeto ou a ideia.",
+      send: "Abrir no app de e-mail",
+      hint: "Isto abre seu app de e-mail com a mensagem pronta para enviar — nada é enviado para este site.",
+    },
   },
   experience: [
     {
@@ -314,7 +343,6 @@ const ptBR: Dictionary = {
         kind: "weather",
         span: "col-span-1",
       },
-
     ],
   },
 }
