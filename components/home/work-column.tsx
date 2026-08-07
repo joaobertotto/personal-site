@@ -1,11 +1,9 @@
 import { FunBento } from "@/components/home/fun-bento"
 import { MosaicTile } from "@/components/home/mosaic-tile"
 import { ScrollColumn } from "@/components/layout/scroll-column"
-import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary, Project, ProjectHomeTile } from "@/lib/i18n/types"
 
 type WorkColumnProps = {
-  locale: Locale
   dictionary: Dictionary
 }
 
@@ -18,13 +16,11 @@ function ProjectBand({
   label,
   tiles,
   projects,
-  locale,
 }: {
   headingId: string
   label: string
   tiles: ProjectHomeTile[]
   projects: Project[]
-  locale: Locale
 }) {
   if (tiles.length === 0) {
     return null
@@ -48,7 +44,6 @@ function ProjectBand({
           return (
             <MosaicTile
               key={tile.id}
-              locale={locale}
               project={project}
               category={label}
               span={tile.span}
@@ -60,7 +55,7 @@ function ProjectBand({
   )
 }
 
-export function WorkColumn({ locale, dictionary }: WorkColumnProps) {
+export function WorkColumn({ dictionary }: WorkColumnProps) {
   const { ui, work, maker, mosaic } = dictionary
 
   const workTiles = mosaic.work.filter(
@@ -81,16 +76,14 @@ export function WorkColumn({ locale, dictionary }: WorkColumnProps) {
         label={ui.work}
         tiles={workTiles}
         projects={work}
-        locale={locale}
       />
       <ProjectBand
         headingId="maker-band"
         label={ui.maker}
         tiles={makerTiles}
         projects={maker}
-        locale={locale}
       />
-      <FunBento locale={locale} dictionary={dictionary} />
+      <FunBento dictionary={dictionary} />
     </ScrollColumn>
   )
 }

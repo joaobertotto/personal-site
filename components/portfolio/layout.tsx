@@ -1,14 +1,11 @@
+"use client"
+
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
+import { useDictionary } from "@/components/layout/language-provider"
 import { SiteNav } from "@/components/layout/site-nav"
 import { ProjectSection } from "@/components/portfolio/project-section"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import type { Locale } from "@/lib/i18n/config"
-import type { Dictionary, Project } from "@/lib/i18n/types"
-
-type PortfolioLayoutProps = {
-  locale: Locale
-  dictionary: Dictionary
-}
+import type { Project } from "@/lib/i18n/types"
 
 function ProjectGroup({
   label,
@@ -41,15 +38,16 @@ function ProjectGroup({
   )
 }
 
-export function PortfolioLayout({ locale, dictionary }: PortfolioLayoutProps) {
+export function PortfolioLayout() {
+  const dictionary = useDictionary()
   const { intro, ui, work, maker, fun } = dictionary
 
   return (
     <main className="flex min-h-dvh flex-col bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-sm">
         <div className="mx-auto flex h-14 w-full max-w-3xl items-center justify-between px-4 sm:px-6">
-          <SiteNav locale={locale} labels={ui.nav} />
-          <LanguageSwitcher locale={locale} label={ui.language} />
+          <SiteNav labels={ui.nav} />
+          <LanguageSwitcher label={ui.language} />
         </div>
       </header>
 

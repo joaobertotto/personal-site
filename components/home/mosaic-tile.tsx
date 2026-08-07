@@ -1,12 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import type { Locale } from "@/lib/i18n/config"
 import type { Project } from "@/lib/i18n/types"
 import { cn } from "@/lib/utils"
 
 type MosaicTileProps = {
-  locale: Locale
   project: Project
   category: string
   span: string
@@ -14,14 +12,13 @@ type MosaicTileProps = {
 }
 
 export function MosaicTile({
-  locale,
   project,
   category,
   span,
   className,
 }: MosaicTileProps) {
   const cover = project.images[0]
-  const href = `/${locale}/portfolio#${project.id}`
+  const href = `/portfolio#${project.id}`
 
   return (
     <li className={cn("min-h-40 list-none p-0.5", span, className)}>

@@ -2,23 +2,23 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 import { locales } from "@/lib/i18n/config"
-import { getLocaleFromRequest } from "@/lib/i18n/get-locale"
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  const pathnameHasLocale = locales.some(
+  const localeFromPath = locales.find(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
 
-  if (pathnameHasLocale) {
+  if (!localeFromPath) {
     return
   }
 
-  const locale = getLocaleFromRequest(request)
-  request.nextUrl.pathname = `/${locale}${pathname === "/" ? "" : pathname}`
+  const stripped = pathname.slice(`/${localeFromPath}`.length) || "/"
+  const url = request.nextUrl.clone()
+  url.pathname = stripped
 
-  return NextResponse.redirect(request.nextUrl)
+  return NextResponse.redirect(url)
 }
 
 export const config = {

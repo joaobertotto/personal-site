@@ -3,11 +3,9 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import type { Locale } from "@/lib/i18n/config"
 import { cn } from "@/lib/utils"
 
 type SiteNavProps = {
-  locale: Locale
   labels: {
     home: string
     portfolio: string
@@ -15,14 +13,12 @@ type SiteNavProps = {
   }
 }
 
-export function SiteNav({ locale, labels }: SiteNavProps) {
+export function SiteNav({ labels }: SiteNavProps) {
   const pathname = usePathname()
-  const homeHref = `/${locale}`
-  const portfolioHref = `/${locale}/portfolio`
 
   const links = [
-    { href: homeHref, label: labels.home, exact: true },
-    { href: portfolioHref, label: labels.portfolio, exact: false },
+    { href: "/", label: labels.home, exact: true },
+    { href: "/portfolio", label: labels.portfolio, exact: false },
   ]
 
   return (

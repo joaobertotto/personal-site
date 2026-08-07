@@ -4,11 +4,9 @@ import { MapCard } from "@/components/home/map-card"
 import { MosaicTile } from "@/components/home/mosaic-tile"
 import { StatusCard } from "@/components/home/status-card"
 import { WeatherCard } from "@/components/home/weather-card"
-import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary, HomeTile, Project } from "@/lib/i18n/types"
 
 type FunBentoProps = {
-  locale: Locale
   dictionary: Dictionary
 }
 
@@ -18,12 +16,10 @@ function projectById(projects: Project[], id: string) {
 
 function renderFunTile({
   tile,
-  locale,
   ui,
   projects,
 }: {
   tile: HomeTile
-  locale: Locale
   ui: Dictionary["ui"]
   projects: Project[]
 }) {
@@ -38,7 +34,6 @@ function renderFunTile({
       return (
         <LocalTimeCard
           key={tile.id}
-          locale={locale}
           labels={ui.localTime}
           span={tile.span}
         />
@@ -54,7 +49,6 @@ function renderFunTile({
       return (
         <MosaicTile
           key={tile.id}
-          locale={locale}
           project={project}
           category={ui.fun}
           span={tile.span}
@@ -66,7 +60,7 @@ function renderFunTile({
   }
 }
 
-export function FunBento({ locale, dictionary }: FunBentoProps) {
+export function FunBento({ dictionary }: FunBentoProps) {
   const { ui, fun, mosaic } = dictionary
 
   return (
@@ -81,7 +75,6 @@ export function FunBento({ locale, dictionary }: FunBentoProps) {
         {mosaic.fun.map((tile) =>
           renderFunTile({
             tile,
-            locale,
             ui,
             projects: fun,
           })

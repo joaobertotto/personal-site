@@ -1,29 +1,16 @@
 "use client"
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-
+import { useLocale } from "@/components/layout/language-provider"
 import { buttonVariants } from "@/components/ui/button"
-import {
-  localeLabels,
-  locales,
-  type Locale,
-} from "@/lib/i18n/config"
+import { localeLabels, locales } from "@/lib/i18n/config"
 import { cn } from "@/lib/utils"
 
 type LanguageSwitcherProps = {
-  locale: Locale
   label: string
 }
 
-function swapLocalePath(pathname: string, nextLocale: Locale) {
-  const segments = pathname.split("/")
-  segments[1] = nextLocale
-  return segments.join("/") || `/${nextLocale}`
-}
-
-export function LanguageSwitcher({ locale, label }: LanguageSwitcherProps) {
-  const pathname = usePathname()
+export function LanguageSwitcher({ label }: LanguageSwitcherProps) {
+  const { locale, setLocale } = useLocale()
 
   return (
     <div className="flex items-center gap-1" aria-label={label}>
@@ -31,12 +18,12 @@ export function LanguageSwitcher({ locale, label }: LanguageSwitcherProps) {
         const isActive = item === locale
 
         return (
-          <Link
+          <button
             key={item}
-            href={swapLocalePath(pathname, item)}
-            hrefLang={item}
+            type="button"
             lang={item}
             aria-current={isActive ? "true" : undefined}
+            onClick={() => setLocale(item)}
             className={cn(
               buttonVariants({
                 variant: isActive ? "secondary" : "ghost",
@@ -46,7 +33,7 @@ export function LanguageSwitcher({ locale, label }: LanguageSwitcherProps) {
             )}
           >
             {localeLabels[item]}
-          </Link>
+          </button>
         )
       })}
     </div>

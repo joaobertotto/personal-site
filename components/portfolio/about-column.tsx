@@ -3,15 +3,13 @@ import { ScrollColumn } from "@/components/layout/scroll-column"
 import { SiteNav } from "@/components/layout/site-nav"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { contact } from "@/constants/contact"
-import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/lib/i18n/types"
 
 type AboutColumnProps = {
-  locale: Locale
   dictionary: Dictionary
 }
 
-export function AboutColumn({ locale, dictionary }: AboutColumnProps) {
+export function AboutColumn({ dictionary }: AboutColumnProps) {
   const { intro, about, experience, ui } = dictionary
 
   return (
@@ -21,8 +19,8 @@ export function AboutColumn({ locale, dictionary }: AboutColumnProps) {
       contentClassName="flex w-full flex-col gap-10 px-6 py-10 md:pr-10 md:pl-8"
     >
       <div className="flex items-start justify-between gap-4">
-        <SiteNav locale={locale} labels={ui.nav} />
-        <LanguageSwitcher locale={locale} label={ui.language} />
+        <SiteNav labels={ui.nav} />
+        <LanguageSwitcher label={ui.language} />
       </div>
 
       <section id="intro" className="flex min-w-0 flex-col gap-4">

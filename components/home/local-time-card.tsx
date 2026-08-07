@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 
 import { FunTileShell } from "@/components/home/fun-tile-shell"
+import { useLocale } from "@/components/layout/language-provider"
 import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/lib/i18n/types"
 
@@ -11,7 +12,6 @@ const TIME_ZONE = "America/Sao_Paulo"
 type LocalTimeLabels = Dictionary["ui"]["localTime"]
 
 type LocalTimeCardProps = {
-  locale: Locale
   labels: LocalTimeLabels
   span: string
 }
@@ -40,7 +40,8 @@ function formatParts(date: Date, locale: Locale): ClockParts {
   return { time, day }
 }
 
-export function LocalTimeCard({ locale, labels, span }: LocalTimeCardProps) {
+export function LocalTimeCard({ labels, span }: LocalTimeCardProps) {
+  const { locale } = useLocale()
   const [now, setNow] = useState<ClockParts | null>(null)
 
   useEffect(() => {
