@@ -4,6 +4,7 @@ import { MapCard } from "@/components/home/map-card"
 import { MosaicTile } from "@/components/home/mosaic-tile"
 import { StatusCard } from "@/components/home/status-card"
 import { WeatherCard } from "@/components/home/weather-card"
+import { LocaleText } from "@/components/layout/locale-text"
 import type { Dictionary, HomeTile, Project } from "@/lib/i18n/types"
 
 type FunBentoProps = {
@@ -69,7 +70,7 @@ export function FunBento({ dictionary }: FunBentoProps) {
         id="fun-bento-heading"
         className="px-0.5 text-sm font-medium tracking-wide text-muted-foreground uppercase"
       >
-        {ui.fun}
+        <LocaleText>{ui.fun}</LocaleText>
       </h2>
       <ul className="grid list-none grid-flow-dense grid-cols-2 gap-1.5 p-0 auto-rows-[minmax(10rem,auto)] md:grid-cols-4 md:auto-rows-[minmax(10rem,1fr)]">
         {mosaic.fun.map((tile) =>

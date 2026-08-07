@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react"
 
 import { FunTileShell } from "@/components/home/fun-tile-shell"
+import { LocaleText } from "@/components/layout/locale-text"
 import type { Dictionary } from "@/lib/i18n/types"
 
 const STORAGE_KEY = "personal-site:coffee-count"
@@ -75,7 +76,9 @@ export function CoffeeCard({ labels, span }: CoffeeCardProps) {
     >
       <div className="flex flex-col gap-1">
         <p className="text-3xl font-medium tracking-tight tabular-nums">{count}</p>
-        <p className="text-sm text-muted-foreground">{labels.unit}</p>
+        <p className="text-sm text-muted-foreground">
+          <LocaleText>{labels.unit}</LocaleText>
+        </p>
       </div>
     </FunTileShell>
   )

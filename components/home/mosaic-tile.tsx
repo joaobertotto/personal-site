@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { LocaleText } from "@/components/layout/locale-text"
 import type { Project } from "@/lib/i18n/types"
 import { cn } from "@/lib/utils"
 
@@ -43,12 +44,16 @@ export function MosaicTile({
           )}
         >
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-            {category}
+            <LocaleText>{category}</LocaleText>
           </p>
           <div className="flex flex-col gap-0.5">
-            <p className="text-sm font-medium tracking-tight">{project.title}</p>
+            <p className="text-sm font-medium tracking-tight">
+              <LocaleText>{project.title}</LocaleText>
+            </p>
             {cover?.caption ? (
-              <p className="text-xs text-muted-foreground">{cover.caption}</p>
+              <p className="text-xs text-muted-foreground">
+                <LocaleText>{cover.caption}</LocaleText>
+              </p>
             ) : null}
           </div>
         </div>

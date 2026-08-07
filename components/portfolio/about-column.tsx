@@ -1,4 +1,5 @@
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
+import { LocaleText } from "@/components/layout/locale-text"
 import { ScrollColumn } from "@/components/layout/scroll-column"
 import { SiteNav } from "@/components/layout/site-nav"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -34,12 +35,20 @@ export function AboutColumn({ dictionary }: AboutColumnProps) {
             <AvatarFallback className="rounded-lg">JB</AvatarFallback>
           </Avatar>
           <div className="flex min-w-0 flex-col">
-            <h1 className="text-2xl font-medium tracking-tight">{intro.name}</h1>
-            <p className="text-sm text-muted-foreground">{intro.role}</p>
+            <h1 className="text-2xl font-medium tracking-tight">
+              {intro.name}
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              <LocaleText>{intro.role}</LocaleText>
+            </p>
           </div>
         </div>
-        <p className="text-sm text-muted-foreground">{intro.location}</p>
-        <p className="max-w-md text-muted-foreground">{intro.bio}</p>
+        <p className="text-sm text-muted-foreground">
+          <LocaleText>{intro.location}</LocaleText>
+        </p>
+        <p className="max-w-md text-muted-foreground">
+          <LocaleText>{intro.bio}</LocaleText>
+        </p>
       </section>
 
       <section id="about" className="flex flex-col gap-3">

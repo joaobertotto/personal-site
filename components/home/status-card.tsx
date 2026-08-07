@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 
 import { FunTileShell } from "@/components/home/fun-tile-shell"
+import { LocaleText } from "@/components/layout/locale-text"
 import type { Dictionary } from "@/lib/i18n/types"
 import { cn } from "@/lib/utils"
 
@@ -71,7 +72,9 @@ export function StatusCard({ labels, span }: StatusCardProps) {
             status === "offline" && "bg-muted-foreground/50"
           )}
         />
-        <p className="text-lg font-medium tracking-tight">{copy}</p>
+        <p className="text-lg font-medium tracking-tight">
+          <LocaleText>{copy}</LocaleText>
+        </p>
       </div>
     </FunTileShell>
   )

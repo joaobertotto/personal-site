@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 
 import { FunTileShell } from "@/components/home/fun-tile-shell"
 import { useLocale } from "@/components/layout/language-provider"
+import { LocaleText } from "@/components/layout/locale-text"
 import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/lib/i18n/types"
 
@@ -60,8 +61,12 @@ export function LocalTimeCard({ labels, span }: LocalTimeCardProps) {
         <p className="text-3xl font-medium tracking-tight tabular-nums">
           {now?.time ?? "--:--:--"}
         </p>
-        <p className="text-sm text-muted-foreground">{now?.day ?? "—"}</p>
-        <p className="text-xs text-muted-foreground">{labels.timezone}</p>
+        <p className="text-sm text-muted-foreground">
+          {now ? <LocaleText>{now.day}</LocaleText> : "—"}
+        </p>
+        <p className="text-xs text-muted-foreground">
+          <LocaleText>{labels.timezone}</LocaleText>
+        </p>
       </div>
     </FunTileShell>
   )

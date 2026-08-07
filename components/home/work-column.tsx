@@ -1,5 +1,6 @@
 import { FunBento } from "@/components/home/fun-bento"
 import { MosaicTile } from "@/components/home/mosaic-tile"
+import { LocaleText } from "@/components/layout/locale-text"
 import { ScrollColumn } from "@/components/layout/scroll-column"
 import type { Dictionary, Project, ProjectHomeTile } from "@/lib/i18n/types"
 
@@ -32,7 +33,7 @@ function ProjectBand({
         id={headingId}
         className="px-0.5 text-sm font-medium tracking-wide text-muted-foreground uppercase"
       >
-        {label}
+        <LocaleText>{label}</LocaleText>
       </h2>
       <ul className="grid list-none grid-flow-dense grid-cols-2 gap-1.5 p-0 auto-rows-[minmax(10rem,auto)] md:grid-cols-4 md:auto-rows-[minmax(10rem,1fr)]">
         {tiles.map((tile) => {

@@ -1,5 +1,6 @@
 import Image from "next/image"
 
+import { LocaleText } from "@/components/layout/locale-text"
 import type { Dictionary } from "@/lib/i18n/types"
 import { cn } from "@/lib/utils"
 
@@ -41,9 +42,11 @@ export function MapCard({ labels, span, className }: MapCardProps) {
 
         <div className="relative z-10 mt-auto flex w-full flex-col gap-0.5 p-3">
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-            {labels.label}
+            <LocaleText>{labels.label}</LocaleText>
           </p>
-          <p className="text-sm font-medium tracking-tight">{labels.place}</p>
+          <p className="text-sm font-medium tracking-tight">
+            <LocaleText>{labels.place}</LocaleText>
+          </p>
         </div>
       </a>
     </li>

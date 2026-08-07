@@ -1,6 +1,7 @@
 "use client"
 
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
+import { LocaleText } from "@/components/layout/locale-text"
 import { useDictionary } from "@/components/layout/language-provider"
 import { SiteNav } from "@/components/layout/site-nav"
 import { ProjectSection } from "@/components/portfolio/project-section"
@@ -23,7 +24,7 @@ function ProjectGroup({
   return (
     <div className="space-y-5">
       <p className="mx-auto max-w-3xl px-4 text-sm font-medium tracking-wide text-muted-foreground uppercase sm:px-6">
-        {label}
+        <LocaleText>{label}</LocaleText>
       </p>
       <div className="space-y-16">
         {projects.map((project) => (
@@ -63,7 +64,7 @@ export function PortfolioLayout() {
               <AvatarFallback className="rounded-full text-lg">JB</AvatarFallback>
             </Avatar>
             <p className="max-w-xl text-2xl font-medium text-pretty text-muted-foreground">
-              {intro.portfolioBio}
+              <LocaleText>{intro.portfolioBio}</LocaleText>
             </p>
           </div>
 

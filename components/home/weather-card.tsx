@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 
+import { LocaleText } from "@/components/layout/locale-text"
 import type { Dictionary } from "@/lib/i18n/types"
 import { cn } from "@/lib/utils"
 
@@ -94,15 +95,19 @@ export function WeatherCard({ labels, span, className }: WeatherCardProps) {
         aria-live="polite"
       >
         <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-          {labels.label}
+          <LocaleText>{labels.label}</LocaleText>
         </p>
 
         {weather.status === "loading" ? (
-          <p className="text-sm text-muted-foreground">{labels.loading}</p>
+          <p className="text-sm text-muted-foreground">
+            <LocaleText>{labels.loading}</LocaleText>
+          </p>
         ) : null}
 
         {weather.status === "error" ? (
-          <p className="text-sm text-muted-foreground">{labels.error}</p>
+          <p className="text-sm text-muted-foreground">
+            <LocaleText>{labels.error}</LocaleText>
+          </p>
         ) : null}
 
         {weather.status === "ready" ? (
@@ -111,9 +116,13 @@ export function WeatherCard({ labels, span, className }: WeatherCardProps) {
               {Math.round(weather.temperature)}°
             </p>
             <p className="text-sm text-muted-foreground">
-              {conditionFromCode(weather.code, labels.conditions)}
+              <LocaleText>
+                {conditionFromCode(weather.code, labels.conditions)}
+              </LocaleText>
             </p>
-            <p className="text-xs text-muted-foreground">{labels.place}</p>
+            <p className="text-xs text-muted-foreground">
+              <LocaleText>{labels.place}</LocaleText>
+            </p>
           </div>
         ) : null}
       </div>

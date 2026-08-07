@@ -1,5 +1,6 @@
 import Image from "next/image"
 
+import { LocaleText } from "@/components/layout/locale-text"
 import type { Project } from "@/lib/i18n/types"
 
 type ProjectSectionProps = {
@@ -20,7 +21,7 @@ export function ProjectSection({ project, visitLabel }: ProjectSectionProps) {
             id={`${project.id}-title`}
             className="text-xl font-medium tracking-tight"
           >
-            {project.title}
+            <LocaleText>{project.title}</LocaleText>
           </h2>
           {project.href ? (
             <a
@@ -29,11 +30,13 @@ export function ProjectSection({ project, visitLabel }: ProjectSectionProps) {
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground underline-offset-4 hover:underline"
             >
-              {visitLabel}
+              <LocaleText>{visitLabel}</LocaleText>
             </a>
           ) : null}
         </div>
-        <p className="max-w-3xl text-muted-foreground">{project.description}</p>
+        <p className="max-w-3xl text-muted-foreground">
+          <LocaleText>{project.description}</LocaleText>
+        </p>
       </header>
 
       <div className="w-screen max-w-[100vw] overflow-x-auto overflow-y-visible py-4 [scrollbar-width:none]">
@@ -62,7 +65,7 @@ export function ProjectSection({ project, visitLabel }: ProjectSectionProps) {
                   )}
                 </div>
                 <figcaption className="pl-1 text-xs font-medium tracking-wide text-muted-foreground uppercase sm:text-sm">
-                  {image.caption}
+                  <LocaleText>{image.caption}</LocaleText>
                 </figcaption>
               </figure>
             </li>

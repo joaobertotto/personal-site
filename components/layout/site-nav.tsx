@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
+import { LocaleText } from "@/components/layout/locale-text"
 import { cn } from "@/lib/utils"
 
 type SiteNavProps = {
@@ -40,7 +41,7 @@ export function SiteNav({ labels }: SiteNavProps) {
                 : "text-muted-foreground hover:underline"
             )}
           >
-            {link.label}
+            <LocaleText>{link.label}</LocaleText>
           </Link>
         )
       })}

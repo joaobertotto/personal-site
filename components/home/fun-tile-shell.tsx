@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 
+import { LocaleText } from "@/components/layout/locale-text"
 import { cn } from "@/lib/utils"
 
 type FunTileShellProps = {
@@ -31,7 +32,7 @@ export function FunTileShell({
   const content = (
     <>
       <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-        {label}
+        <LocaleText>{label}</LocaleText>
       </p>
       {children}
     </>
