@@ -6,9 +6,8 @@ import { FunTileShell } from "@/components/home/fun-tile-shell"
 import { useLocale } from "@/components/i18n/language-provider"
 import { LocaleText } from "@/components/i18n/locale-text"
 import type { Dictionary } from "@/content/types"
+import { TIME_ZONE } from "@/lib/availability"
 import type { Locale } from "@/lib/i18n/config"
-
-const TIME_ZONE = "America/Sao_Paulo"
 
 type LocalTimeLabels = Dictionary["ui"]["localTime"]
 

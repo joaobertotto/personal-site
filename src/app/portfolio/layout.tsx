@@ -3,22 +3,16 @@
 import type { ReactNode } from "react"
 
 import { useDictionary } from "@/components/i18n/language-provider"
-import { LanguageSwitcher } from "@/components/i18n/language-switcher"
 import { LocaleText } from "@/components/i18n/locale-text"
-import { SiteNav } from "@/components/layout/site-nav"
+import { SiteHeader } from "@/components/layout/site-header"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export default function PortfolioLayout({ children }: { children: ReactNode }) {
-  const { intro, ui } = useDictionary()
+  const { intro } = useDictionary()
 
   return (
     <main className="flex min-h-dvh flex-col bg-background text-foreground">
-      <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-sm">
-        <div className="mx-auto flex h-14 w-full max-w-3xl items-center justify-between px-4 sm:px-6">
-          <SiteNav labels={ui.nav} />
-          <LanguageSwitcher label={ui.language} />
-        </div>
-      </header>
+      <SiteHeader />
 
       <div className="flex w-full flex-1 items-start justify-center overflow-x-clip pt-[4vh] lg:pt-[6vh]">
         <div className="w-full space-y-16 pb-24">

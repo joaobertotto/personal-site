@@ -10,6 +10,7 @@ type SiteNavProps = {
   labels: {
     home: string
     portfolio: string
+    contact: string
     label: string
   }
 }
@@ -20,6 +21,7 @@ export function SiteNav({ labels }: SiteNavProps) {
   const links = [
     { href: "/", label: labels.home, exact: true },
     { href: "/portfolio", label: labels.portfolio, exact: false },
+    { href: "/contact", label: labels.contact, exact: false },
   ]
 
   return (
