@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-import { PortfolioLayout } from "@/components/portfolio/portfolio-layout"
+import { PortfolioLayout } from "./layout"
 import { getDictionary } from "@/lib/i18n/get-dictionary"
 import { getRequestLocale } from "@/lib/i18n/get-locale"
 
