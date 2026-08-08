@@ -17,7 +17,7 @@ export default function ContactLayout({ children }: { children: ReactNode }) {
       <div className="flex w-full flex-1 items-start justify-center overflow-x-clip pt-[4vh] lg:pt-[6vh]">
         <div className="w-full space-y-12">
           <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 sm:px-6">
-            <h1 className="text-3xl font-medium tracking-tight">
+            <h1 className="text-display text-4xl">
               <LocaleText>{contactPage.heading}</LocaleText>
             </h1>
             <p className="max-w-xl text-lg text-pretty text-muted-foreground">

@@ -27,7 +27,7 @@ export default function PortfolioLayout({ children }: { children: ReactNode }) {
                 JB
               </AvatarFallback>
             </Avatar>
-            <p className="max-w-xl text-2xl font-medium text-pretty text-muted-foreground">
+            <p className="max-w-xl text-display text-3xl text-pretty text-muted-foreground">
               <LocaleText>{intro.portfolioBio}</LocaleText>
             </p>
           </div>

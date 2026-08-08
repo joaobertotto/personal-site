@@ -17,10 +17,7 @@ export function ProjectSection({ project, visitLabel }: ProjectSectionProps) {
     >
       <header className="mx-auto flex w-full max-w-3xl flex-col gap-1 px-4 sm:px-6">
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <h2
-            id={`${project.id}-title`}
-            className="text-xl font-medium tracking-tight"
-          >
+          <h2 id={`${project.id}-title`} className="text-display text-2xl">
             <LocaleText>{project.title}</LocaleText>
           </h2>
           {project.href ? (

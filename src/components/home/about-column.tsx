@@ -35,9 +35,7 @@ export function AboutColumn({ dictionary }: AboutColumnProps) {
             <AvatarFallback className="rounded-lg">JB</AvatarFallback>
           </Avatar>
           <div className="flex min-w-0 flex-col">
-            <h1 className="text-2xl font-medium tracking-tight">
-              {intro.name}
-            </h1>
+            <h1 className="text-display text-3xl">{intro.name}</h1>
             <p className="text-sm text-muted-foreground">
               <LocaleText>{intro.role}</LocaleText>
             </p>
