@@ -11,6 +11,8 @@ type FunTileShellProps = {
   as?: "div" | "button"
   onClick?: () => void
   ariaLabel?: string
+  /** Ambient layer rendered behind the content, clipped to the tile radius. */
+  backdrop?: ReactNode
 }
 
 export function FunTileShell({
@@ -21,9 +23,10 @@ export function FunTileShell({
   as = "div",
   onClick,
   ariaLabel,
+  backdrop,
 }: FunTileShellProps) {
   const sharedClassName = cn(
-    "flex h-full min-h-40 w-full flex-col justify-between gap-3 rounded-xl bg-muted/80 p-3 text-left",
+    "relative flex h-full min-h-40 w-full flex-col justify-between gap-3 overflow-hidden rounded-xl bg-muted/80 p-3 text-left",
     as === "button" &&
       "cursor-pointer transition-[filter] outline-none hover:brightness-[0.97] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
     className
@@ -31,10 +34,11 @@ export function FunTileShell({
 
   const content = (
     <>
-      <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+      {backdrop}
+      <p className="relative text-xs font-medium tracking-wide text-muted-foreground uppercase">
         <LocaleText>{label}</LocaleText>
       </p>
-      {children}
+      <div className="relative">{children}</div>
     </>
   )
 

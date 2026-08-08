@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 
+import { WeatherVisual } from "@/components/home/tiles/weather-visual"
 import { LocaleText } from "@/components/i18n/locale-text"
 import type { Dictionary } from "@/content/types"
 import { cn } from "@/lib/utils"
@@ -91,10 +92,14 @@ export function WeatherTile({ labels, span, className }: WeatherTileProps) {
   return (
     <li className={cn("min-h-40 list-none p-0.5", span, className)}>
       <div
-        className="flex h-full min-h-40 flex-col justify-between gap-3 rounded-xl bg-muted/80 p-3"
+        className="relative flex h-full min-h-40 flex-col justify-between gap-3 overflow-hidden rounded-xl bg-muted/80 p-3"
         aria-live="polite"
       >
-        <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+        {weather.status === "ready" ? (
+          <WeatherVisual code={weather.code} />
+        ) : null}
+
+        <p className="relative text-xs font-medium tracking-wide text-muted-foreground uppercase">
           <LocaleText>{labels.label}</LocaleText>
         </p>
 
@@ -111,7 +116,7 @@ export function WeatherTile({ labels, span, className }: WeatherTileProps) {
         ) : null}
 
         {weather.status === "ready" ? (
-          <div className="flex flex-col gap-1">
+          <div className="relative flex flex-col gap-1">
             <p className="text-3xl font-medium tracking-tight tabular-nums">
               {Math.round(weather.temperature)}°
             </p>
