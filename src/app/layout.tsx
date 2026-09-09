@@ -1,6 +1,7 @@
 import localFont from "next/font/local"
 
 import { LanguageProvider } from "@/components/i18n/language-provider"
+import { WipNotice } from "@/components/layout/wip-notice"
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import type { Dictionary } from "@/content/types"
 import { locales } from "@/lib/i18n/config"
@@ -81,6 +82,7 @@ export default async function RootLayout({
         <ThemeProvider>
           <LanguageProvider initialLocale={locale} dictionaries={dictionaries}>
             {children}
+            <WipNotice />
           </LanguageProvider>
         </ThemeProvider>
       </body>

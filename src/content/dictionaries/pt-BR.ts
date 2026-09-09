@@ -33,6 +33,11 @@ const ptBR: Dictionary = {
     inProgress: {
       label: "Em andamento",
     },
+    wipNotice: {
+      title: "Ainda em construção",
+      body: "O site já está no ar enquanto termino os estudos de caso de trabalho e maker. Fique à vontade para explorar, e fale comigo se quiser conversar enquanto isso.",
+      action: "Entendi",
+    },
     weather: {
       label: "Clima",
       loading: "Carregando clima…",

@@ -33,6 +33,11 @@ const en: Dictionary = {
     inProgress: {
       label: "In progress",
     },
+    wipNotice: {
+      title: "Still being built",
+      body: "This site is live while I finish the work and maker case studies. Look around, and get in touch if you'd like to talk in the meantime.",
+      action: "Got it",
+    },
     weather: {
       label: "Weather",
       loading: "Loading weather…",

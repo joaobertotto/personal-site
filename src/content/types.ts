@@ -118,6 +118,11 @@ export type Dictionary = {
     inProgress: {
       label: string
     }
+    wipNotice: {
+      title: string
+      body: string
+      action: string
+    }
     weather: {
       label: string
       loading: string
