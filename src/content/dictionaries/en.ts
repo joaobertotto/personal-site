@@ -27,6 +27,7 @@ const en: Dictionary = {
     siteInfo: "Site information",
     projectGallery: "Project gallery",
     language: "Language",
+    cv: "Download CV",
     project: "Project",
     visitProject: "Visit project",
     inProgress: {

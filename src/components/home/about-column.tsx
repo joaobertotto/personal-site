@@ -1,5 +1,6 @@
 import { LanguageSwitcher } from "@/components/i18n/language-switcher"
 import { LocaleText } from "@/components/i18n/locale-text"
+import { CvDownloadButton } from "@/components/layout/cv-download-button"
 import { ScrollColumn } from "@/components/layout/scroll-column"
 import { SiteNav } from "@/components/layout/site-nav"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -21,7 +22,10 @@ export function AboutColumn({ dictionary }: AboutColumnProps) {
     >
       <div className="flex items-start justify-between gap-4">
         <SiteNav labels={ui.nav} />
-        <LanguageSwitcher label={ui.language} />
+        <div className="flex shrink-0 items-center gap-2">
+          <CvDownloadButton label={ui.cv} />
+          <LanguageSwitcher label={ui.language} />
+        </div>
       </div>
 
       <section id="intro" className="flex min-w-0 flex-col gap-4">

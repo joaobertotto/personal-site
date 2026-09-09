@@ -27,6 +27,7 @@ const ptBR: Dictionary = {
     siteInfo: "Informações do site",
     projectGallery: "Galeria de projetos",
     language: "Idioma",
+    cv: "Baixar CV",
     project: "Projeto",
     visitProject: "Visitar projeto",
     inProgress: {

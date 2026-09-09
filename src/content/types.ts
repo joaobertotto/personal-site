@@ -112,6 +112,7 @@ export type Dictionary = {
     siteInfo: string
     projectGallery: string
     language: string
+    cv: string
     project: string
     visitProject: string
     inProgress: {
