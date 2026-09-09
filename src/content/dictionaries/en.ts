@@ -29,6 +29,9 @@ const en: Dictionary = {
     language: "Language",
     project: "Project",
     visitProject: "Visit project",
+    inProgress: {
+      label: "In progress",
+    },
     weather: {
       label: "Weather",
       loading: "Loading weather…",
@@ -330,40 +333,37 @@ const en: Dictionary = {
     },
   ],
   mosaic: {
-    // Legion Sabers anchors the band at 2x2; the other two stack beside it as
-    // full-width strips. Fills a 4x2 grid exactly on md+, 2x4 on mobile.
+    // Layout is the intended mosaic — restore each placeholder with
+    // `kind: "project"` and the `projectId` noted below. Screenshots are not
+    // ready yet; placeholders keep the grid from collapsing on launch.
     //
-    // Stand It Up is deliberately absent: it stays in `work` above so the
-    // portfolio page still lists it, but the home page leads with the three
-    // strongest pieces rather than everything.
+    // Legion Sabers (2x2) anchors the band; Wotan and Fulfillment stack
+    // beside it as full-width strips. Fills a 4x2 grid exactly on md+, 2x4
+    // on mobile. Stand It Up stays off the home page on purpose.
     work: [
       {
-        id: "tile-legion-sabers",
-        kind: "project",
-        projectId: "legion-sabers",
+        id: "tile-legion-sabers", // projectId: "legion-sabers"
+        kind: "inProgress",
         span: "col-span-2 row-span-2",
       },
       {
-        id: "tile-wotan-brindes",
-        kind: "project",
-        projectId: "wotan-brindes",
+        id: "tile-wotan-brindes", // projectId: "wotan-brindes"
+        kind: "inProgress",
         span: "col-span-2",
       },
       {
-        id: "tile-fulfillment",
-        kind: "project",
-        projectId: "fulfillment",
+        id: "tile-fulfillment", // projectId: "fulfillment"
+        kind: "inProgress",
         span: "col-span-2",
       },
     ],
-    // Anchor + two portraits: the configurator is a 2x2 anchor and the droid
-    // and CAD tiles stand beside it as 1x2 columns. Fills a 4x2 grid exactly
-    // on md+, and stacks into a 2x4 grid on mobile.
+    // Configurator (2x2) + two portraits: the droid stays live; CAD is a
+    // placeholder until its shots land. Fills a 4x2 grid exactly on md+,
+    // and stacks into a 2x4 grid on mobile.
     maker: [
       {
-        id: "tile-configurator",
-        kind: "project",
-        projectId: "configurator",
+        id: "tile-configurator", // projectId: "configurator"
+        kind: "inProgress",
         span: "col-span-2 row-span-2",
       },
       {
@@ -372,9 +372,8 @@ const en: Dictionary = {
         span: "col-span-1 row-span-2",
       },
       {
-        id: "tile-cad-pipeline",
-        kind: "project",
-        projectId: "cad-pipeline",
+        id: "tile-cad-pipeline", // projectId: "cad-pipeline"
+        kind: "inProgress",
         span: "col-span-1 row-span-2",
       },
     ],

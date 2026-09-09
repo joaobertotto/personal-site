@@ -1,5 +1,6 @@
 import { MosaicTile } from "@/components/home/mosaic-tile"
 import { CoffeeTile } from "@/components/home/tiles/coffee"
+import { InProgressTile } from "@/components/home/tiles/in-progress"
 import { LocalTimeTile } from "@/components/home/tiles/local-time"
 import { MapTile } from "@/components/home/tiles/map"
 import { R2D2Tile } from "@/components/home/tiles/r2d2"
@@ -48,6 +49,15 @@ export function renderHomeTile({
       return <CoffeeTile key={tile.id} labels={ui.coffee} span={tile.span} />
     case "r2d2":
       return <R2D2Tile key={tile.id} labels={ui.r2d2} span={tile.span} />
+    case "inProgress":
+      return (
+        <InProgressTile
+          key={tile.id}
+          labels={ui.inProgress}
+          category={category}
+          span={tile.span}
+        />
+      )
     case "project": {
       const project = projectById(projects, tile.projectId)
       if (!project) {

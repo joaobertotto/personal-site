@@ -84,7 +84,14 @@ export type ProjectHomeTile = {
 
 export type WidgetHomeTile = {
   id: string
-  kind: "weather" | "map" | "status" | "localTime" | "coffee" | "r2d2"
+  kind:
+    | "weather"
+    | "map"
+    | "status"
+    | "localTime"
+    | "coffee"
+    | "r2d2"
+    | "inProgress"
   span: string
 }
 
@@ -107,6 +114,9 @@ export type Dictionary = {
     language: string
     project: string
     visitProject: string
+    inProgress: {
+      label: string
+    }
     weather: {
       label: string
       loading: string
