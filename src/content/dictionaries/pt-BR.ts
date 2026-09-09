@@ -93,7 +93,7 @@ const ptBR: Dictionary = {
   intro: {
     name: "João Bertotto",
     role: "Engenheiro de Software",
-    bio: "Engenheiro de software com 5 anos construindo aplicações web em produção com React, TypeScript e Next.js. Atualmente sou o único desenvolvedor de um produto de e-commerce nos EUA, responsável pelo storefront de ponta a ponta — da interface para o cliente até os sistemas que levam os pedidos à logística. Quatro anos de trabalho remoto e assíncrono com times baseados nos EUA.",
+    bio: "Cinco anos construindo aplicações web de produção com React, TypeScript e Next.js. Atualmente sou líder técnico e único desenvolvedor de uma operação de e-commerce D2C sediada nos EUA: respondo por tudo, da interface da loja aos sistemas que processam pedidos e integram fornecedores. Quatro anos de trabalho 100% remoto e assíncrono com times americanos.",
     portfolioBio:
       "Eu sou o João, engenheiro de software em Porto Alegre, trabalhando com design e código.",
     location: "Porto Alegre, Brasil (UTC−3) · Remoto",
@@ -128,12 +128,12 @@ const ptBR: Dictionary = {
   },
   experience: [
     {
-      position: "CTO e Desenvolvedor Único",
+      position: "Líder Técnico e Engenheiro de Software",
       company: "Legion Sabers",
       dates: "jun 2023 – Atual",
       location: "Portland, OR (Totalmente remoto)",
       description:
-        "Responsável pelo frontend em React e TypeScript de ponta a ponta em um e-commerce DTC de 10 pessoas. Reconstruí o storefront Shopify, lancei um configurador de produto em Three.js e construí a automação de fulfillment que sincroniza o time nos EUA, o armazém e o parceiro de manufatura na China.",
+        "Respondo por toda a stack de frontend em React e TypeScript — arquitetura, implementação e deploy em produção — em rotina totalmente assíncrona, com 4 horas de diferença de fuso. Reconstruí o storefront Shopify, lancei um configurador de produto em Three.js com motor de regras em TypeScript e construí a automação de logística que sincroniza o time nos EUA, o armazém e o parceiro de manufatura na China.",
     },
     {
       position: "Desenvolvedor Web e Especialista em Modelagem 3D",

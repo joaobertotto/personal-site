@@ -93,7 +93,7 @@ const en: Dictionary = {
   intro: {
     name: "João Bertotto",
     role: "Software Engineer",
-    bio: "Software engineer with 5 years building production web applications in React, TypeScript, and Next.js. Currently the sole developer on a U.S. e-commerce product, owning the storefront end to end — from the customer-facing UI through to the systems that move orders into fulfillment. Four years of fully remote, async work with U.S.-based teams.",
+    bio: "Five years building production web applications with React, TypeScript, and Next.js. Currently technical lead and sole developer of a U.S.-based D2C e-commerce operation — I own everything from the storefront to the systems that process orders and integrate suppliers. Four years of fully remote, async work with American teams.",
     portfolioBio:
       "I'm João, a software engineer based in Porto Alegre, working in design and code.",
     location: "Porto Alegre, Brazil (UTC−3) · Remote",
@@ -128,12 +128,12 @@ const en: Dictionary = {
   },
   experience: [
     {
-      position: "CTO & Sole Developer",
+      position: "Technical Lead & Software Engineer",
       company: "Legion Sabers",
       dates: "Jun 2023 – Present",
       location: "Portland, OR (Fully remote)",
       description:
-        "Own the React and TypeScript frontend end to end for a 10-person DTC e-commerce business. Rebuilt the Shopify storefront, shipped a Three.js product configurator, and built fulfillment automation that syncs the U.S. team, warehouse, and China manufacturing partner.",
+        "Own the React and TypeScript frontend end to end — architecture, implementation, and production deploys — in a fully async routine across a four-hour time difference. Rebuilt the Shopify storefront, shipped a Three.js product configurator with a TypeScript rules engine, and built logistics automation that syncs the U.S. team, warehouse, and China manufacturing partner.",
     },
     {
       position: "Web Developer & 3D Modeling Specialist",
