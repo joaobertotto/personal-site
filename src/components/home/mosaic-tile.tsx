@@ -1,9 +1,12 @@
-import Image from "next/image"
-import Link from "next/link"
+"use client"
 
+import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
+import { useState } from "react"
+
+import { InsetRevealTile } from "@/components/home/inset-reveal-tile"
 import { LocaleText } from "@/components/i18n/locale-text"
 import type { Project } from "@/content/types"
-import { cn } from "@/lib/utils"
 
 type MosaicTileProps = {
   project: Project
@@ -19,46 +22,35 @@ export function MosaicTile({
   className,
 }: MosaicTileProps) {
   const cover = project.images[0]
-  const href = `/portfolio#${project.id}`
+
+  // Screenshots land in `public/work/` over time, so a tile may point at a
+  // file that is not there yet. Dropping the image on error falls back to the
+  // typographic card instead of a torn layout with a broken-image box.
+  const [coverFailed, setCoverFailed] = useState(false)
+  const showCover = Boolean(cover?.src) && !coverFailed
 
   return (
-    <li className={cn("min-h-40 list-none p-0.5", span, className)}>
-      <Link
-        href={href}
-        className="group relative flex h-full min-h-40 flex-col overflow-hidden rounded-xl bg-muted transition-[filter] duration-300 outline-none hover:brightness-[0.97] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-      >
-        {cover?.src ? (
+    <InsetRevealTile
+      href={`/portfolio#${project.id}`}
+      span={span}
+      className={className}
+      scrim={showCover}
+      eyebrow={<LocaleText>{category}</LocaleText>}
+      title={<LocaleText>{project.title}</LocaleText>}
+      caption={cover?.caption ? <LocaleText>{cover.caption}</LocaleText> : null}
+      bandTrailing={<ArrowUpRight className="size-3.5" aria-hidden />}
+      media={
+        showCover && cover?.src ? (
           <Image
             src={cover.src}
             alt={cover.alt}
             fill
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+            onError={() => setCoverFailed(true)}
+            className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
             sizes="(max-width: 768px) 50vw, 25vw"
           />
-        ) : null}
-
-        <div
-          className={cn(
-            "relative z-10 flex h-full flex-col justify-between gap-3 p-3",
-            cover?.src &&
-              "bg-linear-to-t from-background/80 via-background/20 to-transparent"
-          )}
-        >
-          <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-            <LocaleText>{category}</LocaleText>
-          </p>
-          <div className="flex flex-col gap-0.5">
-            <p className="text-sm font-medium tracking-tight">
-              <LocaleText>{project.title}</LocaleText>
-            </p>
-            {cover?.caption ? (
-              <p className="text-xs text-muted-foreground">
-                <LocaleText>{cover.caption}</LocaleText>
-              </p>
-            ) : null}
-          </div>
-        </div>
-      </Link>
-    </li>
+        ) : null
+      }
+    />
   )
 }

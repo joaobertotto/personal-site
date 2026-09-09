@@ -13,7 +13,16 @@ export function getLocaleFromAcceptLanguage(
     },
   }).languages()
 
-  return match(languages, locales, defaultLocale) as Locale
+  // Negotiator answers `["*"]` when the header is missing or wildcard-only,
+  // and `match` throws a RangeError on it rather than falling back — which
+  // 500s the page for curl, health checks, and any bot that omits the header.
+  const candidates = languages.filter((language) => language !== "*")
+
+  if (candidates.length === 0) {
+    return defaultLocale
+  }
+
+  return match(candidates, locales, defaultLocale) as Locale
 }
 
 export async function getRequestLocale(): Promise<Locale> {

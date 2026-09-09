@@ -66,6 +66,14 @@ const ptBR: Dictionary = {
       unit: "xícaras hoje",
       add: "Adicionar um café",
     },
+    r2d2: {
+      label: "Dróide",
+      title: "R2-D2",
+      hint: "Toque para acordar",
+      loading: "Ligando o dróide…",
+      unavailable: "Dróide offline",
+      action: "Cutucar o R2-D2",
+    },
     nav: {
       home: "Início",
       portfolio: "Portfólio",
@@ -140,25 +148,60 @@ const ptBR: Dictionary = {
       id: "legion-sabers",
       title: "Legion Sabers",
       description:
-        "Responsabilidade de ponta a ponta pelo storefront de um e-commerce DTC de sabres de luz customizados — React e TypeScript no Shopify, da descoberta do produto até o checkout.",
+        "Único responsável pelo front-end de um storefront DTC de sabres de luz — arquitetura de produto, navegação por coleções e checkout no Shopify. Sustenta um catálogo que vai de sabres de entrada a réplicas fiéis às telas, além da vitrine online da Docking Bay 45, o espaço físico de 280 m² da marca em Portland.",
       href: "https://legionsabers.com",
       images: [
         {
+          src: "/work/legion-sabers/storefront.png",
           alt: "Página inicial do storefront Legion Sabers",
           caption: "Storefront",
           span: "md:col-span-2",
         },
         {
+          src: "/work/legion-sabers/product.png",
           alt: "Página de detalhe de um sabre customizado",
           caption: "Página do produto",
         },
         {
+          src: "/work/legion-sabers/mobile.png",
           alt: "Layout mobile do storefront",
           caption: "Mobile",
         },
         {
+          src: "/work/legion-sabers/collections.png",
           alt: "Experiência de navegação por coleções",
           caption: "Coleções",
+          span: "md:col-span-2",
+        },
+      ],
+    },
+    {
+      id: "wotan-brindes",
+      title: "Wotan Brindes",
+      description:
+        "Site de brindes personalizados e presentes corporativos, construído de ponta a ponta na Pegasus Digital Services — o estúdio que cofundei. Catálogo e páginas de produto alimentam um fluxo de contato via WhatsApp, que é como o negócio realmente fecha vendas.",
+      href: "https://wotanbrindes.com.br",
+      images: [
+        {
+          src: "/work/wotan-brindes/home.png",
+          alt: "Página inicial do site Wotan Brindes",
+          caption: "Home",
+          span: "md:col-span-2",
+        },
+        {
+          src: "/work/wotan-brindes/catalog.png",
+          alt: "Navegação pelo catálogo de produtos",
+          caption: "Catálogo",
+        },
+        {
+          src: "/work/wotan-brindes/product.png",
+          alt: "Página de detalhe do produto",
+          caption: "Página do produto",
+        },
+        {
+          src: "/work/wotan-brindes/mobile.png",
+          alt: "Layout mobile do site Wotan Brindes",
+          caption: "Mobile",
           span: "md:col-span-2",
         },
       ],
@@ -167,18 +210,21 @@ const ptBR: Dictionary = {
       id: "fulfillment",
       title: "Automação de fulfillment",
       description:
-        "Ferramentas internas que sincronizam o time nos EUA, o armazém e o parceiro de manufatura na China — para que os pedidos saiam do storefront e cheguem onde precisam sem planilhas.",
+        "Ferramentas internas que colocam o time nos EUA, o armazém e o parceiro de manufatura na China na mesma fonte de verdade. Substituíram um handoff por planilha — os pedidos saem do storefront e chegam à unidade certa sem ninguém redigitar nada.",
       images: [
         {
+          src: "/work/fulfillment/orders.png",
           alt: "Visão geral do dashboard de sincronização de pedidos",
           caption: "Dashboard de pedidos",
           span: "md:col-span-2",
         },
         {
+          src: "/work/fulfillment/warehouse.png",
           alt: "Visão de status do armazém",
           caption: "Armazém",
         },
         {
+          src: "/work/fulfillment/manufacturing.png",
           alt: "Fluxo de handoff para manufatura",
           caption: "Manufatura",
         },
@@ -188,22 +234,26 @@ const ptBR: Dictionary = {
       id: "stand-it-up",
       title: "Stand It Up",
       description:
-        "Site da empresa e catálogo de produtos construídos do zero — UI desktop e mobile, além de um pipeline de CAD que produziu mais de 300 modelos 3D prontos para produção.",
+        "Site da empresa e catálogo de produtos construídos do zero — páginas de marketing, UI do catálogo e um pipeline de CAD que transformou dados brutos de produto em mais de 300 modelos 3D prontos para produção, sem modelar um a um.",
       images: [
         {
+          src: "/work/stand-it-up/home.png",
           alt: "Página inicial de marketing da Stand It Up",
           caption: "Home",
           span: "md:col-span-2",
         },
         {
+          src: "/work/stand-it-up/catalog.png",
           alt: "Grade do catálogo de produtos",
           caption: "Catálogo",
         },
         {
+          src: "/work/stand-it-up/mobile.png",
           alt: "Navegação mobile do catálogo",
           caption: "Catálogo mobile",
         },
         {
+          src: "/work/stand-it-up/models.png",
           alt: "Exemplos de modelos 3D de produto",
           caption: "Modelos 3D",
           span: "md:col-span-2",
@@ -280,6 +330,12 @@ const ptBR: Dictionary = {
     },
   ],
   mosaic: {
+    // Legion Sabers anchors the band at 2x2; the other two stack beside it as
+    // full-width strips. Fills a 4x2 grid exactly on md+, 2x4 on mobile.
+    //
+    // Stand It Up is deliberately absent: it stays in `work` above so the
+    // portfolio page still lists it, but the home page leads with the three
+    // strongest pieces rather than everything.
     work: [
       {
         id: "tile-legion-sabers",
@@ -288,18 +344,21 @@ const ptBR: Dictionary = {
         span: "col-span-2 row-span-2",
       },
       {
+        id: "tile-wotan-brindes",
+        kind: "project",
+        projectId: "wotan-brindes",
+        span: "col-span-2",
+      },
+      {
         id: "tile-fulfillment",
         kind: "project",
         projectId: "fulfillment",
-        span: "col-span-1 row-span-1 md:col-span-2",
-      },
-      {
-        id: "tile-stand-it-up",
-        kind: "project",
-        projectId: "stand-it-up",
-        span: "col-span-1 row-span-1 md:col-span-2",
+        span: "col-span-2",
       },
     ],
+    // Anchor + two portraits: the configurator is a 2x2 anchor and the droid
+    // and CAD tiles stand beside it as 1x2 columns. Fills a 4x2 grid exactly
+    // on md+, and stacks into a 2x4 grid on mobile.
     maker: [
       {
         id: "tile-configurator",
@@ -308,10 +367,15 @@ const ptBR: Dictionary = {
         span: "col-span-2 row-span-2",
       },
       {
+        id: "tile-r2d2",
+        kind: "r2d2",
+        span: "col-span-1 row-span-2",
+      },
+      {
         id: "tile-cad-pipeline",
         kind: "project",
         projectId: "cad-pipeline",
-        span: "col-span-2",
+        span: "col-span-1 row-span-2",
       },
     ],
     // Anchor + cluster: map is a 2x2 anchor, the four widgets form a 2x2

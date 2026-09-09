@@ -1,27 +1,31 @@
 import { FunBento } from "@/components/home/fun-bento"
-import { MosaicTile } from "@/components/home/mosaic-tile"
+import { renderHomeTile } from "@/components/home/tile-registry"
 import { LocaleText } from "@/components/i18n/locale-text"
 import { ScrollColumn } from "@/components/layout/scroll-column"
-import type { Dictionary, Project, ProjectHomeTile } from "@/content/types"
+import type { Dictionary, HomeTile, Project } from "@/content/types"
 
 type WorkColumnProps = {
   dictionary: Dictionary
 }
 
-function projectById(projects: Project[], id: string) {
-  return projects.find((project) => project.id === id)
-}
-
-function ProjectBand({
+/**
+ * A titled band of the mosaic. Bands are tile-agnostic — the maker band mixes
+ * project cards with widgets (the R2-D2 scene), and the work band happens to
+ * hold only projects today. Which tiles appear is content, not layout, so it
+ * lives in the dictionary's `mosaic` map.
+ */
+function MosaicBand({
   headingId,
   label,
   tiles,
   projects,
+  ui,
 }: {
   headingId: string
   label: string
-  tiles: ProjectHomeTile[]
+  tiles: HomeTile[]
   projects: Project[]
+  ui: Dictionary["ui"]
 }) {
   if (tiles.length === 0) {
     return null
@@ -36,21 +40,9 @@ function ProjectBand({
         <LocaleText>{label}</LocaleText>
       </h2>
       <ul className="grid list-none grid-flow-dense auto-rows-[minmax(10rem,auto)] grid-cols-2 gap-1.5 p-0 md:auto-rows-[minmax(10rem,1fr)] md:grid-cols-4">
-        {tiles.map((tile) => {
-          const project = projectById(projects, tile.projectId)
-          if (!project) {
-            return null
-          }
-
-          return (
-            <MosaicTile
-              key={tile.id}
-              project={project}
-              category={label}
-              span={tile.span}
-            />
-          )
-        })}
+        {tiles.map((tile) =>
+          renderHomeTile({ tile, ui, projects, category: label })
+        )}
       </ul>
     </section>
   )
@@ -59,30 +51,25 @@ function ProjectBand({
 export function WorkColumn({ dictionary }: WorkColumnProps) {
   const { ui, work, maker, mosaic } = dictionary
 
-  const workTiles = mosaic.work.filter(
-    (tile): tile is ProjectHomeTile => tile.kind === "project"
-  )
-  const makerTiles = mosaic.maker.filter(
-    (tile): tile is ProjectHomeTile => tile.kind === "project"
-  )
-
   return (
     <ScrollColumn
       ariaLabel={ui.projectGallery}
       className="size-full md:h-dvh"
       contentClassName="flex size-full flex-col gap-6 p-2 md:pl-0"
     >
-      <ProjectBand
+      <MosaicBand
         headingId="work-band"
         label={ui.work}
-        tiles={workTiles}
+        tiles={mosaic.work}
         projects={work}
+        ui={ui}
       />
-      <ProjectBand
+      <MosaicBand
         headingId="maker-band"
         label={ui.maker}
-        tiles={makerTiles}
+        tiles={mosaic.maker}
         projects={maker}
+        ui={ui}
       />
       <FunBento dictionary={dictionary} />
     </ScrollColumn>

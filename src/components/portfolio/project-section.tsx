@@ -1,11 +1,41 @@
+"use client"
+
 import Image from "next/image"
+import { useState } from "react"
 
 import { LocaleText } from "@/components/i18n/locale-text"
-import type { Project } from "@/content/types"
+import type { Project, ProjectImage } from "@/content/types"
 
 type ProjectSectionProps = {
   project: Project
   visitLabel: string
+}
+
+/**
+ * One frame in the horizontal strip. Screenshots arrive in `public/work/` over
+ * time, so a slot may be declared before its file exists — an image that fails
+ * to load collapses back to the empty plate rather than a broken-image box.
+ */
+function ProjectFrame({ image }: { image: ProjectImage }) {
+  const [failed, setFailed] = useState(false)
+  const showImage = Boolean(image.src) && !failed
+
+  return (
+    <div className="relative h-[216px] w-[min(80vw,28rem)] overflow-hidden rounded-xl bg-muted sm:h-[420px] sm:w-[36rem]">
+      {showImage && image.src ? (
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          onError={() => setFailed(true)}
+          className="object-cover object-top"
+          sizes="(max-width: 640px) 80vw, 36rem"
+        />
+      ) : (
+        <div className="size-full" role="img" aria-label={image.alt} />
+      )}
+    </div>
+  )
 }
 
 export function ProjectSection({ project, visitLabel }: ProjectSectionProps) {
@@ -44,23 +74,7 @@ export function ProjectSection({ project, visitLabel }: ProjectSectionProps) {
               className="flex shrink-0 flex-col gap-2"
             >
               <figure className="flex flex-col gap-2">
-                <div className="relative h-[216px] w-[min(80vw,28rem)] overflow-hidden rounded-xl bg-muted sm:h-[420px] sm:w-[36rem]">
-                  {image.src ? (
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 640px) 80vw, 36rem"
-                    />
-                  ) : (
-                    <div
-                      className="size-full"
-                      role="img"
-                      aria-label={image.alt}
-                    />
-                  )}
-                </div>
+                <ProjectFrame image={image} />
                 <figcaption className="pl-1 text-xs font-medium tracking-wide text-muted-foreground uppercase sm:text-sm">
                   <LocaleText>{image.caption}</LocaleText>
                 </figcaption>

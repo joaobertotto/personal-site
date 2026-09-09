@@ -84,7 +84,7 @@ export type ProjectHomeTile = {
 
 export type WidgetHomeTile = {
   id: string
-  kind: "weather" | "map" | "status" | "localTime" | "coffee"
+  kind: "weather" | "map" | "status" | "localTime" | "coffee" | "r2d2"
   span: string
 }
 
@@ -143,6 +143,17 @@ export type Dictionary = {
       label: string
       unit: string
       add: string
+    }
+    r2d2: {
+      label: string
+      title: string
+      /** Shown once the model is on screen — nudges the click interaction. */
+      hint: string
+      loading: string
+      /** Model missing or WebGL unavailable. */
+      unavailable: string
+      /** aria-label for the tile button. */
+      action: string
     }
     nav: {
       home: string
