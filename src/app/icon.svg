@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #faf9f6; }
+    .fg { fill: #1c1b19; }
+    .edge { fill: none; stroke: #1c1b19; stroke-opacity: 0.16; stroke-width: 1; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1b19; }
+      .fg { fill: #faf9f6; }
+      .edge { stroke: #faf9f6; stroke-opacity: 0.2; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="6"/>
+  <rect class="edge" x="0.5" y="0.5" width="31" height="31" rx="5.5"/>
+  <g class="fg" transform="translate(5.475 22.072) scale(0.017600 -0.017600)">
+    <path d="M50 190C50 74 146 -10 279 -10C415 -10 510 77 510 198V700H135V590H385V198C385 140 342 100 278 100C216 100 171 137 167 190Z"/>
+    <path d="M85 0H335C457 0 546 85 546 200C546 275 508 334 447 365V369C495 400 524 452 524 514C524 621 440 700 325 700H85ZM210 418V590H325C371 590 404 554 404 504C404 454 371 418 325 418ZM210 110V308H335C386 308 421 267 421 209C421 151 386 110 335 110Z" transform="translate(600 0)"/>
+  </g>
+</svg>
