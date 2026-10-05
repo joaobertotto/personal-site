@@ -1,13 +1,16 @@
+import type { Metadata } from "next"
 import localFont from "next/font/local"
 import Script from "next/script"
 
 import { LanguageProvider } from "@/components/i18n/language-provider"
 import { WipNotice } from "@/components/layout/wip-notice"
 import { ThemeProvider } from "@/components/providers/theme-provider"
+import { contact } from "@/content/contact"
 import type { Dictionary } from "@/content/types"
 import { locales } from "@/lib/i18n/config"
 import { getDictionary } from "@/lib/i18n/get-dictionary"
 import { getRequestLocale } from "@/lib/i18n/get-locale"
+import { siteName, siteUrl } from "@/lib/seo/site"
 import { cn } from "@/lib/utils"
 
 import "./globals.css"
@@ -64,6 +67,11 @@ const fontMono = localFont({
   ],
 })
 
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
+}
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -76,6 +84,23 @@ export default async function RootLayout({
     )
   ) as Record<(typeof locales)[number], Dictionary>
 
+  const { intro } = dictionaries.en
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: intro.name,
+    jobTitle: intro.role,
+    url: siteUrl,
+    image: `${siteUrl}/avatar.png`,
+    email: `mailto:${contact.email}`,
+    sameAs: [
+      `https://github.com/${contact.github}`,
+      ...(contact.linkedin
+        ? [`https://www.linkedin.com/in/${contact.linkedin}`]
+        : []),
+    ],
+  }
+
   return (
     <html
       lang={locale}
@@ -87,6 +112,13 @@ export default async function RootLayout({
       )}
     >
       <body>
+        <script
+          type="application/ld+json"
+          // Escape `<` so a stray "</script>" in content can't break out.
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <ThemeProvider>
           <LanguageProvider initialLocale={locale} dictionaries={dictionaries}>
             {children}

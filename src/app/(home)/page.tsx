@@ -3,14 +3,17 @@ import type { Metadata } from "next"
 import { HomeProjects } from "@/components/home/home-projects"
 import { getDictionary } from "@/lib/i18n/get-dictionary"
 import { getRequestLocale } from "@/lib/i18n/get-locale"
+import { buildPageMetadata } from "@/lib/seo/site"
 
 export async function generateMetadata(): Promise<Metadata> {
-  const dictionary = await getDictionary(await getRequestLocale())
+  const locale = await getRequestLocale()
+  const dictionary = await getDictionary(locale)
 
-  return {
-    title: dictionary.meta.home.title,
-    description: dictionary.meta.home.description,
-  }
+  return buildPageMetadata({
+    ...dictionary.meta.home,
+    path: "/",
+    locale,
+  })
 }
 
 export default function HomePage() {
