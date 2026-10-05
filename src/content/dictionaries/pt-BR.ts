@@ -272,6 +272,30 @@ const ptBR: Dictionary = {
   ],
   maker: [
     {
+      id: "brickfig",
+      title: "Brickfig Creator",
+      description:
+        "Um app web que transforma as artes de um personagem em uma figura de blocos multicolor, pronta para imprimir. Envie as imagens, escolha o plástico, e ele define a paleta de filamentos e pinta cada peça — os arquivos 3MF abrem no Bambu Studio ou OrcaSlicer já coloridos, distribuídos nas mesas da sua impressora. Nasceu de encomendas de figuras gigantes: horas pintando à mão no slicer viraram alguns cliques. Um Photo Studio posa a figura para renders.",
+      images: [
+        {
+          src: "/work/brickfig/design.png",
+          alt: "Tela de design do Brickfig Creator com uma figura pintada e o seletor de peças",
+          caption: "Design",
+          span: "md:col-span-2",
+        },
+        {
+          src: "/work/brickfig/photo-studio.png",
+          alt: "Photo Studio com poses prontas para a figura",
+          caption: "Photo Studio",
+        },
+        {
+          src: "/work/brickfig/print.png",
+          alt: "Etapa de impressão 3D com as mesas e as cores de filamento por peça",
+          caption: "Pronto para imprimir",
+        },
+      ],
+    },
+    {
       id: "configurator",
       title: "Configurador de produto",
       description:
@@ -363,13 +387,15 @@ const ptBR: Dictionary = {
         span: "col-span-2",
       },
     ],
-    // Configurator (2x2) + two portraits: the droid stays live; CAD is a
-    // placeholder until its shots land. Fills a 4x2 grid exactly on md+,
+    // Brickfig (2x2) + two portraits: the droid stays live; CAD is a
+    // placeholder until its shots land. The configurator is portfolio-only
+    // until it has screenshots. Fills a 4x2 grid exactly on md+,
     // and stacks into a 2x4 grid on mobile.
     maker: [
       {
-        id: "tile-configurator", // projectId: "configurator"
-        kind: "inProgress",
+        id: "tile-brickfig",
+        kind: "project",
+        projectId: "brickfig",
         span: "col-span-2 row-span-2",
       },
       {

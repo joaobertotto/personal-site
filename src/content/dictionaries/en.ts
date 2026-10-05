@@ -272,6 +272,30 @@ const en: Dictionary = {
   ],
   maker: [
     {
+      id: "brickfig",
+      title: "Brickfig Creator",
+      description:
+        "A web app that turns a character's artwork into a print-ready, multicolor brick figure. Upload the pictures, pick the plastic, and it picks the filament palette and paints every part — the 3MF files open in Bambu Studio or OrcaSlicer already colored, laid out on your printer's beds. Born from commissions for giant figures: hours of hand-painting in the slicer, now a few clicks. A Photo Studio poses the figure for renders.",
+      images: [
+        {
+          src: "/work/brickfig/design.png",
+          alt: "Brickfig Creator design view with a painted figure and part picker",
+          caption: "Design",
+          span: "md:col-span-2",
+        },
+        {
+          src: "/work/brickfig/photo-studio.png",
+          alt: "Photo Studio with pose presets for the figure",
+          caption: "Photo Studio",
+        },
+        {
+          src: "/work/brickfig/print.png",
+          alt: "3D print step showing print beds and filament colors per part",
+          caption: "Ready to print",
+        },
+      ],
+    },
+    {
       id: "configurator",
       title: "Product configurator",
       description:
@@ -363,13 +387,15 @@ const en: Dictionary = {
         span: "col-span-2",
       },
     ],
-    // Configurator (2x2) + two portraits: the droid stays live; CAD is a
-    // placeholder until its shots land. Fills a 4x2 grid exactly on md+,
+    // Brickfig (2x2) + two portraits: the droid stays live; CAD is a
+    // placeholder until its shots land. The configurator is portfolio-only
+    // until it has screenshots. Fills a 4x2 grid exactly on md+,
     // and stacks into a 2x4 grid on mobile.
     maker: [
       {
-        id: "tile-configurator", // projectId: "configurator"
-        kind: "inProgress",
+        id: "tile-brickfig",
+        kind: "project",
+        projectId: "brickfig",
         span: "col-span-2 row-span-2",
       },
       {

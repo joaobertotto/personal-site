@@ -23,6 +23,9 @@ are translated.
 | `fulfillment/orders.png` | Home tile cover + portfolio | Orders dashboard — **scrub client data** |
 | `fulfillment/warehouse.png` | Portfolio | Warehouse status view |
 | `fulfillment/manufacturing.png` | Portfolio | Manufacturing handoff |
+| `brickfig/design.png` | Home tile cover (maker) + portfolio | Design step, default figure |
+| `brickfig/photo-studio.png` | Portfolio | Photo Studio, pose step |
+| `brickfig/print.png` | Portfolio | 3D Print step, files ready |
 | `stand-it-up/home.png` | Portfolio only | Not on the home page |
 | `stand-it-up/catalog.png` | Portfolio only | |
 | `stand-it-up/mobile.png` | Portfolio only | |
