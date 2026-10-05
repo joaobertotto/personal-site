@@ -1,4 +1,5 @@
 import localFont from "next/font/local"
+import Script from "next/script"
 
 import { LanguageProvider } from "@/components/i18n/language-provider"
 import { WipNotice } from "@/components/layout/wip-notice"
@@ -40,6 +41,13 @@ const fontSerif = localFont({
  * drop the .woff2 files in the same directory under the same names — nothing
  * else needs to change.
  */
+/**
+ * Umami analytics. Only rendered when both env vars are set, so local dev and
+ * preview builds stay untracked unless explicitly configured.
+ */
+const umamiSrc = process.env.NEXT_PUBLIC_UMAMI_SRC
+const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
+
 const fontMono = localFont({
   variable: "--font-mono",
   display: "swap",
@@ -85,6 +93,13 @@ export default async function RootLayout({
             <WipNotice />
           </LanguageProvider>
         </ThemeProvider>
+        {umamiSrc && umamiWebsiteId && (
+          <Script
+            src={umamiSrc}
+            data-website-id={umamiWebsiteId}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   )

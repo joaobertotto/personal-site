@@ -5,6 +5,7 @@ import { useId, useState } from "react"
 import { LocaleText } from "@/components/i18n/locale-text"
 import { Button } from "@/components/ui/button"
 import { contact } from "@/content/contact"
+import { track } from "@/lib/analytics"
 import type { Dictionary } from "@/content/types"
 
 type ContactFormProps = {
@@ -34,6 +35,12 @@ export function ContactForm({ labels }: ContactFormProps) {
     if (message.trim()) {
       params.set("body", message.trim())
     }
+
+    // Only whether fields were filled — never their contents.
+    track("contact:form-submit", {
+      hasSubject: Boolean(subject.trim()),
+      hasMessage: Boolean(message.trim()),
+    })
 
     const query = params.toString()
     window.location.href = query

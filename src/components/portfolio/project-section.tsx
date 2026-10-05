@@ -53,6 +53,8 @@ export function ProjectSection({ project, visitLabel }: ProjectSectionProps) {
           {project.href ? (
             <a
               href={project.href}
+              data-umami-event="project:visit"
+              data-umami-event-project={project.id}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground underline-offset-4 hover:underline"

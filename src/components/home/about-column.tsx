@@ -86,12 +86,18 @@ export function AboutColumn({ dictionary }: AboutColumnProps) {
         <div className="flex flex-col gap-2 text-muted-foreground">
           <a
             href={`mailto:${contact.email}`}
+            data-umami-event="contact:link"
+            data-umami-event-channel="email"
+            data-umami-event-location="home"
             className="underline-offset-4 hover:underline"
           >
             {contact.email}
           </a>
           <a
             href={`https://github.com/${contact.github}`}
+            data-umami-event="contact:link"
+            data-umami-event-channel="github"
+            data-umami-event-location="home"
             target="_blank"
             rel="noopener noreferrer"
             className="underline-offset-4 hover:underline"

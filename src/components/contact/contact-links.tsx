@@ -65,6 +65,9 @@ export function ContactLinks({ labels }: ContactLinksProps) {
               {...(link.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
+              data-umami-event="contact:link"
+              data-umami-event-channel={link.key}
+              data-umami-event-location="contact-page"
               className="group flex items-baseline gap-3 rounded-lg py-1 underline-offset-4 outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <span className="w-20 shrink-0 text-sm text-muted-foreground">

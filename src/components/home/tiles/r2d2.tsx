@@ -8,6 +8,7 @@ import { FunTileShell } from "@/components/home/fun-tile-shell"
 import type { SceneStatus } from "@/components/home/tiles/r2d2-scene"
 import { LocaleText } from "@/components/i18n/locale-text"
 import type { Dictionary } from "@/content/types"
+import { track } from "@/lib/analytics"
 
 /**
  * Portrait 3D tile. The droid is the whole point, so the scene is the tile's
@@ -58,7 +59,14 @@ export function R2D2Tile({ labels, span }: R2D2TileProps) {
       span={span}
       label={labels.label}
       as={interactive ? "button" : "div"}
-      onClick={interactive ? () => setPoke((value) => value + 1) : undefined}
+      onClick={
+        interactive
+          ? () => {
+              setPoke((value) => value + 1)
+              track("tile:r2d2-poke")
+            }
+          : undefined
+      }
       ariaLabel={interactive ? labels.action : undefined}
       className="min-h-[21rem] md:min-h-full"
       backdrop={

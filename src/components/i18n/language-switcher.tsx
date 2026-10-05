@@ -24,6 +24,8 @@ export function LanguageSwitcher({ label }: LanguageSwitcherProps) {
             lang={item}
             aria-current={isActive ? "true" : undefined}
             onClick={() => setLocale(item)}
+            data-umami-event={isActive ? undefined : "language:switch"}
+            data-umami-event-to={item}
             className={cn(
               buttonVariants({
                 variant: isActive ? "secondary" : "ghost",
