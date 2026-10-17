@@ -157,28 +157,28 @@ const en: Dictionary = {
       id: "legion-sabers",
       title: "Legion Sabers",
       description:
-        "Sole front-end owner of a direct-to-consumer lightsaber storefront — product architecture, collection browsing, and checkout on Shopify. Carries a catalog that runs from entry-level sabers to screen-accurate replicas, plus the online face of Docking Bay 45, the brand's 3,000 sq ft retail space in Portland.",
+        "Sole developer of a direct-to-consumer lightsaber store on Shopify, rebuilt and run end to end — theme, product architecture and checkout. The catalog runs past a hundred sabers, from starter hilts to screen-accurate replicas, so browsing follows how fans actually shop: by era (Prequels, Originals, Sequels, Games, Shows), by saber type, and by the electronics inside. Most sabers pair a sound board (Xeno or Proffie) with a blade type (Baselit or Pixel), and the product pages and help guides explain that choice in plain words before it reaches the cart. The store sells worldwide in local currency and is also the online face of Docking Bay 45, the brand's 3,000 sq ft in-universe venue in Portland.",
       href: "https://legionsabers.com",
       images: [
         {
           src: "/work/legion-sabers/storefront.png",
-          alt: "Legion Sabers storefront home page",
+          alt: "Legion Sabers home page with the New arrivals hero and featured collections",
           caption: "Storefront",
           span: "md:col-span-2",
         },
         {
           src: "/work/legion-sabers/product.png",
-          alt: "Product detail page for a custom saber",
+          alt: "Product page for The Fracture with blade and hilt specs, style options and add to cart",
           caption: "Product page",
         },
         {
           src: "/work/legion-sabers/mobile.png",
-          alt: "Mobile storefront layout",
+          alt: "Mobile home page showing the Docking Bay 45 banner and featured collections",
           caption: "Mobile",
         },
         {
           src: "/work/legion-sabers/collections.png",
-          alt: "Collection browsing experience",
+          alt: "All Sabers collection with price, saber type and appearance filters",
           caption: "Collections",
           span: "md:col-span-2",
         },
@@ -402,8 +402,9 @@ const en: Dictionary = {
     // on mobile. Stand It Up stays off the home page on purpose.
     work: [
       {
-        id: "tile-legion-sabers", // projectId: "legion-sabers"
-        kind: "inProgress",
+        id: "tile-legion-sabers",
+        kind: "project",
+        projectId: "legion-sabers",
         span: "col-span-2 row-span-2",
       },
       {

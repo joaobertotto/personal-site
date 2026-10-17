@@ -157,28 +157,28 @@ const ptBR: Dictionary = {
       id: "legion-sabers",
       title: "Legion Sabers",
       description:
-        "Único responsável pelo front-end de um storefront DTC de sabres de luz — arquitetura de produto, navegação por coleções e checkout no Shopify. Sustenta um catálogo que vai de sabres de entrada a réplicas fiéis às telas, além da vitrine online da Docking Bay 45, o espaço físico de 280 m² da marca em Portland.",
+        "Único desenvolvedor de uma loja DTC de sabres de luz no Shopify, reconstruída e mantida de ponta a ponta — tema, arquitetura de produto e checkout. O catálogo passa de cem sabres, de modelos de entrada a réplicas fiéis às telas, então a navegação segue o jeito que os fãs compram: por era (Prequels, Originals, Sequels, Games, Shows), por tipo de sabre e pela eletrônica de dentro. A maioria dos sabres combina uma placa de som (Xeno ou Proffie) com um tipo de lâmina (Baselit ou Pixel), e as páginas de produto e os guias de ajuda explicam essa escolha em palavras simples antes de chegar ao carrinho. A loja vende para o mundo todo na moeda local e também é a vitrine online da Docking Bay 45, o espaço temático de 280 m² da marca em Portland.",
       href: "https://legionsabers.com",
       images: [
         {
           src: "/work/legion-sabers/storefront.png",
-          alt: "Página inicial do storefront Legion Sabers",
+          alt: "Página inicial da Legion Sabers com o banner de lançamentos e as coleções em destaque",
           caption: "Storefront",
           span: "md:col-span-2",
         },
         {
           src: "/work/legion-sabers/product.png",
-          alt: "Página de detalhe de um sabre customizado",
+          alt: "Página do produto The Fracture com especificações de lâmina e cabo, opções de estilo e botão de compra",
           caption: "Página do produto",
         },
         {
           src: "/work/legion-sabers/mobile.png",
-          alt: "Layout mobile do storefront",
+          alt: "Página inicial no mobile com o banner da Docking Bay 45 e as coleções em destaque",
           caption: "Mobile",
         },
         {
           src: "/work/legion-sabers/collections.png",
-          alt: "Experiência de navegação por coleções",
+          alt: "Coleção All Sabers com filtros de preço, tipo de sabre e aparição",
           caption: "Coleções",
           span: "md:col-span-2",
         },
@@ -402,8 +402,9 @@ const ptBR: Dictionary = {
     // on mobile. Stand It Up stays off the home page on purpose.
     work: [
       {
-        id: "tile-legion-sabers", // projectId: "legion-sabers"
-        kind: "inProgress",
+        id: "tile-legion-sabers",
+        kind: "project",
+        projectId: "legion-sabers",
         span: "col-span-2 row-span-2",
       },
       {
