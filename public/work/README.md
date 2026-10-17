@@ -26,6 +26,10 @@ are translated.
 | `brickfig/design.png` | Home tile cover (maker) + portfolio | Design step, default figure |
 | `brickfig/photo-studio.png` | Portfolio | Photo Studio, pose step |
 | `brickfig/print.png` | Portfolio | 3D Print step, files ready |
+| `parametric-engine/design.png` | Portfolio | Record Wall Holder, default settings |
+| `parametric-engine/picker.png` | Portfolio | Model picker open, thumbnails loaded |
+| `parametric-engine/display-riser.png` | Portfolio | Display Riser V2, Voronoi pattern |
+| `parametric-engine/card-frame.png` | Portfolio | Card frame V3.2 |
 | `stand-it-up/home.png` | Portfolio only | Not on the home page |
 | `stand-it-up/catalog.png` | Portfolio only | |
 | `stand-it-up/mobile.png` | Portfolio only | |

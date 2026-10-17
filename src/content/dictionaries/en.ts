@@ -296,6 +296,36 @@ const en: Dictionary = {
       ],
     },
     {
+      id: "parametric-engine",
+      title: "Parametric Engine",
+      description:
+        "CAD in the browser for print-ready parts you can resize. Each model is a short JavaScript file — replicad on OpenCascade WASM, drawn with three.js — and its parameters show up as sliders, toggles and font pickers. Set your sizes, measure the result, then download a 3MF laid out on the bed, an STL, or SVG/DXF for the laser cutter. Card frames that print in place, display risers that clip together, a record shelf with your own text: designs that started in Fusion 360, now resized in seconds instead of remodeled.",
+      images: [
+        {
+          src: "/work/parametric-engine/design.png",
+          alt: "Parametric Engine showing a Now Playing record shelf with text, font and size settings",
+          caption: "Design",
+          span: "md:col-span-2",
+        },
+        {
+          src: "/work/parametric-engine/picker.png",
+          alt: "Model picker with rendered thumbnails grouped by collection",
+          caption: "Model picker",
+        },
+        {
+          src: "/work/parametric-engine/display-riser.png",
+          alt: "Display riser with a Voronoi surface pattern and its size settings",
+          caption: "Surface patterns",
+        },
+        {
+          src: "/work/parametric-engine/card-frame.png",
+          alt: "Print-in-place card frame with fold-out legs",
+          caption: "Print in place",
+          span: "md:col-span-2",
+        },
+      ],
+    },
+    {
       id: "configurator",
       title: "Product configurator",
       description:

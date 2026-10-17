@@ -296,6 +296,36 @@ const ptBR: Dictionary = {
       ],
     },
     {
+      id: "parametric-engine",
+      title: "Parametric Engine",
+      description:
+        "CAD no navegador para peças prontas para imprimir, no tamanho que você precisar. Cada modelo é um arquivo JavaScript curto — replicad sobre OpenCascade WASM, renderizado com three.js — e seus parâmetros viram sliders, botões e seletores de fonte. Ajuste as medidas, meça o resultado e baixe um 3MF já distribuído na mesa, um STL, ou SVG/DXF para a cortadora a laser. Molduras de card que imprimem montadas, expositores que se encaixam lado a lado, uma prateleira de discos com o seu texto: projetos que nasceram no Fusion 360 e agora mudam de tamanho em segundos, sem remodelar.",
+      images: [
+        {
+          src: "/work/parametric-engine/design.png",
+          alt: "Parametric Engine mostrando uma prateleira de discos Now Playing com ajustes de texto, fonte e tamanho",
+          caption: "Design",
+          span: "md:col-span-2",
+        },
+        {
+          src: "/work/parametric-engine/picker.png",
+          alt: "Seletor de modelos com miniaturas renderizadas agrupadas por coleção",
+          caption: "Seletor de modelos",
+        },
+        {
+          src: "/work/parametric-engine/display-riser.png",
+          alt: "Expositor com padrão de superfície Voronoi e seus ajustes de tamanho",
+          caption: "Padrões de superfície",
+        },
+        {
+          src: "/work/parametric-engine/card-frame.png",
+          alt: "Moldura de card impressa montada, com pernas dobráveis",
+          caption: "Impressa montada",
+          span: "md:col-span-2",
+        },
+      ],
+    },
+    {
       id: "configurator",
       title: "Configurador de produto",
       description:
